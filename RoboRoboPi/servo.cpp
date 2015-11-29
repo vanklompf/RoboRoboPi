@@ -15,7 +15,7 @@ void servoSetup()
 {
     pinMode (1, PWM_OUTPUT);
     pwmSetMode(PWM_MODE_MS);
-    pwmSetClock(400);
+    pwmSetClock(384);
     pwmSetRange(1000);
 }
 

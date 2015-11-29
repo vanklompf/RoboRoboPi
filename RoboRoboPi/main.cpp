@@ -1,16 +1,19 @@
 #include <iostream>
+#include <chrono>
 #include <thread>
 #include <wiringPi.h>
 #include "servo.h"
+
+using namespace std::literals;
 
 void blink()
 {
     while(1)
     {
         digitalWrite (16, HIGH);
-        delay (500);
+        std::this_thread::sleep_for(500ms);
         digitalWrite (16,  LOW);
-        delay (500);
+        std::this_thread::sleep_for(500ms);
     }
 }
 
@@ -25,7 +28,7 @@ int main(void)
     while(1)
     {
         int16_t angle;
-        scanf("%i", &angle);
+        scanf("%hi", &angle);
         setServoRotation(angle);
     }
 }
