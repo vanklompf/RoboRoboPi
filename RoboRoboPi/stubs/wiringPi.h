@@ -1,3 +1,5 @@
+#ifndef WIRING_PI_H
+#define WIRING_PI_H
 /*
 * wiringPi:
 *	Arduino compatable (ish) Wiring library for the Raspberry Pi
@@ -34,7 +36,7 @@
 
 // Pin modes
 
-#define	INPUT			 0
+//#define	INPUT			 0
 #define	OUTPUT			 1
 #define	PWM_OUTPUT		 2
 #define	GPIO_CLOCK		 3
@@ -124,3 +126,5 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* WIRING_PI_H */

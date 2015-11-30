@@ -4,6 +4,7 @@
 #include <wiringPi.h>
 #include "servo.h"
 
+#include "xmppHandler.h"
 using namespace std::literals;
 
 void blink()
@@ -24,6 +25,8 @@ int main(void)
     pinMode (16, OUTPUT);
 
     std::thread t1(blink);
+    RoboXmpp r;
+
 
     while(1)
     {
