@@ -1,8 +1,29 @@
-#ifndef WIRING_SERVO_H
-#define WIRING_SERVO_H
+#ifndef SERVO_H
+#define SERVO_H
 #include <stdint.h>
+#include <string>
 
-void servoSetup();
-void setServoRotation(int16_t angle);
+class Servo
+{
+public:
+  enum servo_status_t
+  {
+    SERVO_OK,
+    SERVO_OUT_OF_RANGE,
+    SERVO_ERROR
+  };
 
-#endif //WIRING_SERVO_H
+  void init();
+  const char* getStatusText(servo_status_t status) const;
+  servo_status_t setAngle(int16_t angle);
+  servo_status_t StepLeft();
+  servo_status_t StepRight();
+
+private:
+  int m_gpio_value;
+
+  servo_status_t setGpioRegister(int16_t value);
+  int angleToGpioValue(int16_t angle) const;
+  int16_t gpioValueToAngle(int value) const;
+};
+#endif //SERVO_H

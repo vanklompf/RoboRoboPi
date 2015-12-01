@@ -1,19 +1,27 @@
 #ifndef XMPP_HANDLER_H
 #define XMPP_HANDLER_H
 
-#include "client.h"
 #include "messagehandler.h"
-#include "message.h"
 #include "connectionlistener.h"
 #include "gloox.h"
+
+namespace gloox
+{
+  class Client;
+  class Message;
+  class MessageSession;
+  struct CertInfo;
+}
+class Servo;
 
 class RoboXmpp : public gloox::MessageHandler, gloox::ConnectionListener
 {
 private:
   gloox::Client* m_client;
+  Servo& m_servo;
 
 public:
-  RoboXmpp();
+  RoboXmpp(Servo& servo);
   ~RoboXmpp();
 
   // MessageHandler

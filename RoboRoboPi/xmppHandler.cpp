@@ -2,12 +2,13 @@
 #include "messagehandler.h"
 #include "message.h"
 #include "xmppHandler.h"
+#include "servo.h"
 
+#include <string>
 using namespace gloox;
 
-RoboXmpp::RoboXmpp()
+RoboXmpp::RoboXmpp(Servo& servo) : m_servo(servo)
 {
-  //JID jid("robo@xmppeval.cloudapp.net");
   JID jid("robo@city.gov");
   m_client = new Client(jid, "abcd");
 
@@ -27,7 +28,35 @@ RoboXmpp::~RoboXmpp()
 
 void RoboXmpp::handleMessage(const Message& stanza, MessageSession* session)
 {
-  Message msg(Message::Chat, stanza.from(), "hello world");
+  Servo::servo_status_t status = Servo::SERVO_ERROR;
+
+  if (!stanza.body().empty())
+  {
+    char command = stanza.body().front();
+
+    if ((command <= '9') && (command >= '0'))
+    {
+      int value = ((command - '0') * 10) - 42;
+      status = m_servo.setAngle(value);
+    }
+    else
+    {
+      switch (command)
+      {
+      case 'l':
+        status = m_servo.StepLeft();
+        break;
+      case 'r':
+        status = m_servo.StepRight();
+        break;
+      default:
+        status = Servo::SERVO_ERROR;
+        break;
+      }
+    }
+  }
+
+  Message msg(Message::Chat, stanza.from(), m_servo.getStatusText(status));
   m_client->send(msg);
 }
 

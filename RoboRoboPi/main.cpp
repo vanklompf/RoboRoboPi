@@ -21,17 +21,19 @@ void blink()
 int main(void)
 {
     wiringPiSetup();
-    servoSetup();
+    
     pinMode (16, OUTPUT);
 
     std::thread t1(blink);
-    RoboXmpp r;
+    Servo servo;
+    servo.init();
+    RoboXmpp robo(servo);
 
 
     while(1)
     {
         int16_t angle;
         scanf("%hi", &angle);
-        setServoRotation(angle);
+        servo.setAngle(angle);
     }
 }
