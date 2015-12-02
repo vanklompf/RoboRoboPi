@@ -9,10 +9,9 @@ using namespace gloox;
 
 RoboXmpp::RoboXmpp(Servo& servo) : m_servo(servo)
 {
-  JID jid("robo@city.gov");
+  JID jid("robo@xmppeval.cloudapp.net");
   m_client = new Client(jid, "abcd");
 
-  m_client->setServer("192.168.2.2");
   m_client->disableRoster();
   m_client->registerMessageHandler(this);
   m_client->registerConnectionListener(this);
