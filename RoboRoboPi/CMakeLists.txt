@@ -12,8 +12,10 @@ elseif(HAS_CXX11_FLAG)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 endif()
 
-set(SOURCE_FILES main.cpp servo.h servo.cpp)
+set(SOURCE_FILES main.cpp servo.cpp xmppHandler.cpp)
+include_directories(/usr/include/gloox)
 
 add_executable(wiring ${SOURCE_FILES})
 target_link_libraries(wiring -lwiringPi)
 target_link_libraries(wiring -lpthread)
+target_link_libraries(wiring -lgloox)
