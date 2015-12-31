@@ -16,10 +16,6 @@ class Servo;
 
 class RoboXmpp : public gloox::MessageHandler, gloox::ConnectionListener
 {
-private:
-  gloox::Client* m_client;
-  Servo& m_servo;
-
 public:
   RoboXmpp(Servo& servo);
   ~RoboXmpp();
@@ -31,6 +27,12 @@ public:
   virtual bool onTLSConnect(const gloox::CertInfo& info) { return true; }
   virtual void onConnect();
   virtual void onDisconnect(gloox::ConnectionError e);
+
+private:
+  gloox::Client* m_client;
+  Servo& m_servo;
+
+
 };
 
 #endif /* XMPP_HANDLER_H */

@@ -132,11 +132,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="servo.cpp" />
+    <ClCompile Include="xmppComponent.cpp" />
     <ClCompile Include="xmppHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="servo.h" />
     <ClInclude Include="stubs\wiringPi.h" />
+    <ClInclude Include="xmppComponent.h" />
     <ClInclude Include="xmppHandler.h" />
   </ItemGroup>
   <ItemGroup>

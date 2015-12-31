@@ -5,10 +5,12 @@
 #include "servo.h"
 
 #include "xmppHandler.h"
+#include "xmppComponent.h"
 using namespace std::literals;
 
 void blink()
 {
+    pinMode(16, OUTPUT);
     while(1)
     {
         digitalWrite (16, HIGH);
@@ -18,22 +20,18 @@ void blink()
     }
 }
 
+void component()
+{
+  XmppComponent comp;
+}
+
 int main(void)
 {
     wiringPiSetup();
-    
-    pinMode (16, OUTPUT);
 
     std::thread t1(blink);
+    std::thread t2(component);
     Servo servo;
     servo.init();
     RoboXmpp robo(servo);
-
-
-    while(1)
-    {
-        int16_t angle;
-        scanf("%hi", &angle);
-        servo.setAngle(angle);
-    }
 }
