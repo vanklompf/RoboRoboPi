@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45": {
+      "wrappedProject": "../../RoboXmppHelper/RoboXmppHelper.csproj",
+      "bin": {
+        "assembly": "../../RoboXmppHelper/obj/{configuration}/RoboXmppHelper.dll",
+        "pdb": "../../RoboXmppHelper/obj/{configuration}/RoboXmppHelper.pdb"
+      },
+      "dependencies": {
+        "ARSoft.Tools.Net": "1.8.1",
+        "Sharp.Xmpp": "1.0.2.2"
+      }
+    }
+  }
+}

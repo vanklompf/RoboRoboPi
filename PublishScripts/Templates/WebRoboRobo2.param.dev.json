@@ -1,0 +1,29 @@
+{
+  "siteName": {
+    "value": "WebRoboRobo"
+  },
+  "hostingPlanName": {
+    "value": "RoboApp"
+  },
+  "siteLocation": {
+    "value": "West Europe"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "siteMode": {
+    "value": "Limited"
+  },
+  "computeMode": {
+    "value": "0"
+  },
+  "subscriptionId": {
+    "value": "7e59196c-4f62-476a-8b39-37c4ef3e2eb5"
+  },
+  "resourceGroup": {
+    "value": "xmppeval"
+  }
+}

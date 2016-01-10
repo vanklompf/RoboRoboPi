@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, Click Me For Fun</string>
+    <string name="Connect">Hello World, Click Me To Connect</string>
+    <string name="ApplicationName">AndroidRoboRobo</string>
+</resources>
