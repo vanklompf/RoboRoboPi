@@ -74,7 +74,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>stubs;..\gloox\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)stubs;$(ProjectDir)Commands;$(ProjectDir);$(ProjectDir)..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
@@ -102,7 +102,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>stubs;..\gloox\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)stubs;$(ProjectDir)Commands;$(ProjectDir);$(ProjectDir)..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
@@ -130,16 +130,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Commands\HelpCommand.cpp" />
+    <ClCompile Include="Commands\ServoCommand.cpp" />
+    <ClCompile Include="ConnectionListener.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MessageHandler.cpp" />
+    <ClCompile Include="RoboRoboFactory.cpp" />
     <ClCompile Include="servo.cpp" />
+    <ClCompile Include="logger.cpp" />
     <ClCompile Include="xmppComponent.cpp" />
-    <ClCompile Include="xmppHandler.cpp" />
+    <ClCompile Include="RoboRobo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Commands\HelpCommand.h" />
+    <ClInclude Include="Commands\ICommand.h" />
+    <ClInclude Include="Commands\ServoCommand.h" />
+    <ClInclude Include="ConnectionListener.h" />
+    <ClInclude Include="logger.h" />
+    <ClInclude Include="MessageHandler.h" />
+    <ClInclude Include="RoboRoboFactory.h" />
     <ClInclude Include="servo.h" />
     <ClInclude Include="stubs\wiringPi.h" />
     <ClInclude Include="xmppComponent.h" />
-    <ClInclude Include="xmppHandler.h" />
+    <ClInclude Include="RoboRobo.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\gloox\gloox.vcxproj">

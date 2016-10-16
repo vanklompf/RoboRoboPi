@@ -2,11 +2,15 @@
 #include <chrono>
 #include <thread>
 #include <wiringPi.h>
-#include "servo.h"
 
-#include "xmppHandler.h"
+#include "RoboRobo.h"
+#include "RoboRoboFactory.h"
 #include "xmppComponent.h"
+#include "logger.h"
 using namespace std::literals;
+using namespace robo;
+
+static const char* logPath = "log.txt";
 
 void blink()
 {
@@ -22,16 +26,27 @@ void blink()
 
 void component()
 {
-  XmppComponent comp;
+    XmppComponent comp;
+}
+
+void exitHandler(void)
+{
+    CloseLogger();
 }
 
 int main(void)
 {
+    InitLogger(logPath);
+    LogDebug("------------------------------");
+    LogDebug("RoboRoboPi Started");
+    atexit(exitHandler);
+
     wiringPiSetup();
 
     std::thread t1(blink);
     std::thread t2(component);
-    Servo servo;
-    servo.init();
-    RoboXmpp robo(servo);
+
+    auto robo = RoboRoboFactory::Create();
+    robo->Init();
 }
+

@@ -6,6 +6,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.db
+*.opendb
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -215,3 +217,4 @@ RoboRoboPi/wiring
 RoboRoboPi/Makefile
 *.cmake
 RoboRoboPi/CMakeCache.txt
+RoboRoboPi/log.txt

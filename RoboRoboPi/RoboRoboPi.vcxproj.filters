@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="logger.cpp" />
+    <ClCompile Include="xmppComponent.cpp" />
+    <ClCompile Include="MessageHandler.cpp" />
+    <ClCompile Include="RoboRoboFactory.cpp" />
+    <ClCompile Include="RoboRobo.cpp" />
+    <ClCompile Include="servo.cpp" />
+    <ClCompile Include="ConnectionListener.cpp" />
+    <ClCompile Include="Commands\ServoCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\HelpCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="logger.h" />
+    <ClInclude Include="xmppComponent.h" />
+    <ClInclude Include="stubs\wiringPi.h">
+      <Filter>Stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageHandler.h" />
+    <ClInclude Include="RoboRoboFactory.h" />
+    <ClInclude Include="RoboRobo.h" />
+    <ClInclude Include="servo.h" />
+    <ClInclude Include="ConnectionListener.h" />
+    <ClInclude Include="Commands\ICommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\ServoCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\HelpCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Stubs">
+      <UniqueIdentifier>{96edac7f-c1b2-4c04-b6f6-0fee7679578f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands">
+      <UniqueIdentifier>{23b6f2c5-8532-41e9-a05e-326240bf4dc3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

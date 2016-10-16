@@ -30,8 +30,19 @@ namespace AndroidRoboRobo
       helloButton.Click += delegate { helloButton.Text = $"{_count++} clicks!oneone!"; };
       connectButton.Click += delegate { connectButton.Text = "Connected"; };
 
-      bar.ProgressChanged += delegate { value.Text = bar.Progress.ToString(); };
+      bar.ProgressChanged += OnProgressChanged; //delegate { value.Text = bar.Progress.ToString(); };
     }
+
+    void OnProgressChanged(object e, SeekBar.ProgressChangedEventArgs arg)
+    {
+      FindViewById<EditText>(Resource.Id.editText1).Text = arg.Progress.ToString();
+    }
+
+    void OnLeftClicked(object e, SeekBar.ProgressChangedEventArgs arg)
+    {
+      FindViewById<EditText>(Resource.Id.editText1).Text = arg.Progress.ToString();
+    }
+
   }
 }
 
