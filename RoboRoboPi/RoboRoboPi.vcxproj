@@ -131,8 +131,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Commands\HelpCommand.cpp" />
+    <ClCompile Include="Commands\LedCommand.cpp" />
     <ClCompile Include="Commands\ServoCommand.cpp" />
+    <ClCompile Include="Commands\UnknownCommand.cpp" />
     <ClCompile Include="ConnectionListener.cpp" />
+    <ClCompile Include="Gpio.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageHandler.cpp" />
     <ClCompile Include="RoboRoboFactory.cpp" />
@@ -144,8 +147,11 @@
   <ItemGroup>
     <ClInclude Include="Commands\HelpCommand.h" />
     <ClInclude Include="Commands\ICommand.h" />
+    <ClInclude Include="Commands\LedCommand.h" />
     <ClInclude Include="Commands\ServoCommand.h" />
+    <ClInclude Include="Commands\UnknownCommand.h" />
     <ClInclude Include="ConnectionListener.h" />
+    <ClInclude Include="Gpio.h" />
     <ClInclude Include="logger.h" />
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="RoboRoboFactory.h" />

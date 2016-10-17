@@ -1,19 +1,19 @@
 #ifndef SERVO_H
 #define SERVO_H
-#include <stdint.h>
+#include <cstdint>
 
 namespace robo
 {
+  enum servo_status_t
+  {
+    SERVO_OK,
+    SERVO_OUT_OF_RANGE,
+    SERVO_ERROR
+  };
+
   class Servo
   {
   public:
-    enum servo_status_t
-    {
-      SERVO_OK,
-      SERVO_OUT_OF_RANGE,
-      SERVO_ERROR
-    };
-
     void init();
     const char* getStatusText(servo_status_t status) const;
     servo_status_t SetAngle(int16_t angle);

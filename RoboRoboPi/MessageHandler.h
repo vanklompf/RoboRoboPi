@@ -22,6 +22,7 @@ namespace robo
   public:
     MessageHandler(gloox::Client& client);
     void RegisterCommand(char opcode, std::unique_ptr<ICommand> command);
+    void RegisterDefaultCommand(std::unique_ptr<ICommand> command);
 
     // MessageHandler
     virtual void handleMessage(const gloox::Message& stanza, gloox::MessageSession* session = 0);
@@ -29,6 +30,7 @@ namespace robo
   private:
     gloox::Client& m_client;
     std::map<char, std::unique_ptr<ICommand>> m_commands;
+    std::unique_ptr<ICommand> m_default_command;
   };
 }
 #endif /* MESSAGE_HANDLER_H */

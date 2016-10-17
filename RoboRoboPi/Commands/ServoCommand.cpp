@@ -12,7 +12,7 @@ namespace robo
   {
     LogDebug("Executing ServoCommand(\"%s\")", command.c_str());
 
-    Servo::servo_status_t status = Servo::SERVO_ERROR;
+    auto status = servo_status_t::SERVO_ERROR;
     char param = command.front();
 
     if ((param <= '9') && (param >= '0'))
@@ -31,7 +31,7 @@ namespace robo
         status = m_servo.StepRight();
         break;
       default:
-        return "Unknown parameters: " + command;
+        return "[ServoCommand] Unknown parameters: " + command;
       }
     }
 

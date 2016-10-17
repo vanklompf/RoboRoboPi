@@ -15,6 +15,13 @@
     <ClCompile Include="Commands\HelpCommand.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
+    <ClCompile Include="Commands\UnknownCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\LedCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Gpio.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="logger.h" />
@@ -36,6 +43,13 @@
     <ClInclude Include="Commands\HelpCommand.h">
       <Filter>Commands</Filter>
     </ClInclude>
+    <ClInclude Include="Commands\UnknownCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\LedCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Gpio.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Stubs">

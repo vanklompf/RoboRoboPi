@@ -21,14 +21,14 @@ namespace robo
       LogDebug("Rcv msg from: <%s>. Body: <%s>", stanza.from().full().c_str(), stanza.body().c_str());
       char opcode = std::tolower(stanza.body().front());
 
+      auto param = stanza.body().size() > 2 ? stanza.body().substr(2) : "";
       if (m_commands.find(opcode) != m_commands.end())
       {
-        auto param = stanza.body().size() > 2 ? stanza.body().substr(2) : "";
         status = m_commands.at(opcode)->operator()(param);
       }
       else
       {
-        status = "Unknown opcode: " + opcode;
+        status = m_default_command->operator()(param);
       }
     }
     else
@@ -44,5 +44,10 @@ namespace robo
   void MessageHandler::RegisterCommand(char opcode, std::unique_ptr<ICommand> command)
   {
     m_commands[opcode] = std::move(command);
+  }
+
+  void MessageHandler::RegisterDefaultCommand(std::unique_ptr<ICommand> command)
+  {
+    m_default_command = std::move(command);
   }
 }

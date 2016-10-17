@@ -39,22 +39,22 @@ namespace robo
     SetAngle(0);
   }
 
-  Servo::servo_status_t Servo::setGpioRegister(int16_t value)
+  servo_status_t Servo::setGpioRegister(int16_t value)
   {
-    servo_status_t status = SERVO_ERROR;
+    auto status = servo_status_t::SERVO_ERROR;
     if (value > MAX)
     {
-      status = SERVO_OUT_OF_RANGE;
+      status = servo_status_t::SERVO_OUT_OF_RANGE;
       value = MAX;
     }
     else if (value < MIN)
     {
-      status = SERVO_OUT_OF_RANGE;
+      status = servo_status_t::SERVO_OUT_OF_RANGE;
       value = MIN;
     }
     else
     {
-      status = SERVO_OK;
+      status = servo_status_t::SERVO_OK;
     }
     LogDebug("Setting servo gpio: %d", value);
     m_gpio_value = value;
@@ -63,7 +63,7 @@ namespace robo
     return status;
   }
 
-  Servo::servo_status_t Servo::SetAngle(int16_t angle)
+  servo_status_t Servo::SetAngle(int16_t angle)
   {
     return setGpioRegister(angleToGpioValue(angle));
   }
@@ -78,12 +78,12 @@ namespace robo
     return value - ZERO;
   }
 
-  Servo::servo_status_t Servo::StepLeft()
+  servo_status_t Servo::StepLeft()
   {
     return setGpioRegister(m_gpio_value - 10);
   }
 
-  Servo::servo_status_t Servo::StepRight()
+  servo_status_t Servo::StepRight()
   {
     return setGpioRegister(m_gpio_value + 10);
   }
