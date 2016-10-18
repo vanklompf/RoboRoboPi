@@ -22,6 +22,12 @@
       <Filter>Commands</Filter>
     </ClCompile>
     <ClCompile Include="Gpio.cpp" />
+    <ClCompile Include="stubs\SpeechSynthesizer.cpp">
+      <Filter>Stubs</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\TellCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="logger.h" />
@@ -50,6 +56,12 @@
       <Filter>Commands</Filter>
     </ClInclude>
     <ClInclude Include="Gpio.h" />
+    <ClInclude Include="stubs\SpeechSynthesizer.h">
+      <Filter>Stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\TellCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Stubs">
@@ -58,5 +70,10 @@
     <Filter Include="Commands">
       <UniqueIdentifier>{23b6f2c5-8532-41e9-a05e-326240bf4dc3}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="speak.ps1">
+      <Filter>Stubs</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -133,6 +133,7 @@
     <ClCompile Include="Commands\HelpCommand.cpp" />
     <ClCompile Include="Commands\LedCommand.cpp" />
     <ClCompile Include="Commands\ServoCommand.cpp" />
+    <ClCompile Include="Commands\TellCommand.cpp" />
     <ClCompile Include="Commands\UnknownCommand.cpp" />
     <ClCompile Include="ConnectionListener.cpp" />
     <ClCompile Include="Gpio.cpp" />
@@ -141,6 +142,7 @@
     <ClCompile Include="RoboRoboFactory.cpp" />
     <ClCompile Include="servo.cpp" />
     <ClCompile Include="logger.cpp" />
+    <ClCompile Include="stubs\SpeechSynthesizer.cpp" />
     <ClCompile Include="xmppComponent.cpp" />
     <ClCompile Include="RoboRobo.cpp" />
   </ItemGroup>
@@ -149,6 +151,7 @@
     <ClInclude Include="Commands\ICommand.h" />
     <ClInclude Include="Commands\LedCommand.h" />
     <ClInclude Include="Commands\ServoCommand.h" />
+    <ClInclude Include="Commands\TellCommand.h" />
     <ClInclude Include="Commands\UnknownCommand.h" />
     <ClInclude Include="ConnectionListener.h" />
     <ClInclude Include="Gpio.h" />
@@ -156,6 +159,7 @@
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="RoboRoboFactory.h" />
     <ClInclude Include="servo.h" />
+    <ClInclude Include="stubs\SpeechSynthesizer.h" />
     <ClInclude Include="stubs\wiringPi.h" />
     <ClInclude Include="xmppComponent.h" />
     <ClInclude Include="RoboRobo.h" />
@@ -164,6 +168,9 @@
     <ProjectReference Include="..\gloox\gloox.vcxproj">
       <Project>{36e32bc3-0645-4c90-8bf5-6495acb7cf5f}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="speak.ps1" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

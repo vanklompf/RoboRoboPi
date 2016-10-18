@@ -1,5 +1,5 @@
-#ifndef COMMAND_H
-#define COMMAND_H
+#ifndef ICOMMAND_H
+#define ICOMMAND_H
 
 #include <string>
 
@@ -11,4 +11,4 @@ namespace robo
     virtual std::string operator()(const std::string& command) = 0;
   };
 }
-#endif /* COMMAND_H */
+#endif /* ICOMMAND_H */
