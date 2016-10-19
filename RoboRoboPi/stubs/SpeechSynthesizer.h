@@ -7,4 +7,4 @@ namespace robo
   int Say(std::string phrase);
 }
 
-#endif /*SPEECH_SYNTHESIZER_H /**/
+#endif /* SPEECH_SYNTHESIZER_H */

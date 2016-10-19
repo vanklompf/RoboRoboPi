@@ -28,6 +28,12 @@
     <ClCompile Include="Commands\TellCommand.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
+    <ClCompile Include="Commands\PlaySoundCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="stubs\SoundPlayer.cpp">
+      <Filter>Stubs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="logger.h" />
@@ -62,6 +68,12 @@
     <ClInclude Include="Commands\TellCommand.h">
       <Filter>Commands</Filter>
     </ClInclude>
+    <ClInclude Include="Commands\PlaySoundCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\SoundPlayer.h">
+      <Filter>Stubs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Stubs">
@@ -70,10 +82,36 @@
     <Filter Include="Commands">
       <UniqueIdentifier>{23b6f2c5-8532-41e9-a05e-326240bf4dc3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sounds">
+      <UniqueIdentifier>{40ea731a-14c3-4f37-8712-f806c8a14678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="speak.ps1">
       <Filter>Stubs</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Sounds\apocalypse.wav">
+      <Filter>Sounds</Filter>
+    </Media>
+    <Media Include="Sounds\base.wav">
+      <Filter>Sounds</Filter>
+    </Media>
+    <Media Include="Sounds\burning.wav">
+      <Filter>Sounds</Filter>
+    </Media>
+    <Media Include="Sounds\napalm.wav">
+      <Filter>Sounds</Filter>
+    </Media>
+    <Media Include="Sounds\nuclear.wav">
+      <Filter>Sounds</Filter>
+    </Media>
+    <Media Include="Sounds\system.wav">
+      <Filter>Sounds</Filter>
+    </Media>
+    <Media Include="Sounds\yes.wav">
+      <Filter>Sounds</Filter>
+    </Media>
   </ItemGroup>
 </Project>

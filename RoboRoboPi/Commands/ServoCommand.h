@@ -2,6 +2,7 @@
 #define SERVO_COMMAND_H
 
 #include "ICommand.h"
+#include <string>
 
 namespace robo
 {

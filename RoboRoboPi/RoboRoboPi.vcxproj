@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="Commands\HelpCommand.cpp" />
     <ClCompile Include="Commands\LedCommand.cpp" />
+    <ClCompile Include="Commands\PlaySoundCommand.cpp" />
     <ClCompile Include="Commands\ServoCommand.cpp" />
     <ClCompile Include="Commands\TellCommand.cpp" />
     <ClCompile Include="Commands\UnknownCommand.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="RoboRoboFactory.cpp" />
     <ClCompile Include="servo.cpp" />
     <ClCompile Include="logger.cpp" />
+    <ClCompile Include="stubs\SoundPlayer.cpp" />
     <ClCompile Include="stubs\SpeechSynthesizer.cpp" />
     <ClCompile Include="xmppComponent.cpp" />
     <ClCompile Include="RoboRobo.cpp" />
@@ -150,6 +152,7 @@
     <ClInclude Include="Commands\HelpCommand.h" />
     <ClInclude Include="Commands\ICommand.h" />
     <ClInclude Include="Commands\LedCommand.h" />
+    <ClInclude Include="Commands\PlaySoundCommand.h" />
     <ClInclude Include="Commands\ServoCommand.h" />
     <ClInclude Include="Commands\TellCommand.h" />
     <ClInclude Include="Commands\UnknownCommand.h" />
@@ -159,6 +162,7 @@
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="RoboRoboFactory.h" />
     <ClInclude Include="servo.h" />
+    <ClInclude Include="stubs\SoundPlayer.h" />
     <ClInclude Include="stubs\SpeechSynthesizer.h" />
     <ClInclude Include="stubs\wiringPi.h" />
     <ClInclude Include="xmppComponent.h" />
@@ -171,6 +175,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="speak.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Sounds\apocalypse.wav" />
+    <Media Include="Sounds\base.wav" />
+    <Media Include="Sounds\burning.wav" />
+    <Media Include="Sounds\napalm.wav" />
+    <Media Include="Sounds\nuclear.wav" />
+    <Media Include="Sounds\system.wav" />
+    <Media Include="Sounds\yes.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

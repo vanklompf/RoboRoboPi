@@ -5,6 +5,7 @@
 #include "ServoCommand.h"
 #include "LedCommand.h"
 #include "TellCommand.h"
+#include "PlaySoundCommand.h"
 #include "HelpCommand.h"
 #include "UnknownCommand.h"
 #include "MessageHandler.h"
@@ -32,6 +33,7 @@ namespace robo
     messageHandler->RegisterCommand('l', std::move(std::make_unique<LedCommand>(*gpio)));
     messageHandler->RegisterCommand('h', std::move(std::make_unique<HelpCommand>()));
     messageHandler->RegisterCommand('t', std::move(std::make_unique<TellCommand>()));
+    messageHandler->RegisterCommand('p', std::move(std::make_unique<PlaySoundCommand>()));
 
     auto robo = new RoboRobo(std::move(servo), std::move(client));
     return robo;

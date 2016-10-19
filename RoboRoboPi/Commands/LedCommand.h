@@ -1,6 +1,8 @@
 #ifndef LED_COMMAND_H
 #define LED_COMMAND_H
+
 #include "ICommand.h"
+#include <string>
 
 namespace robo
 {
