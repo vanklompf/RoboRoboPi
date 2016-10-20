@@ -4,9 +4,9 @@
 
 namespace robo
 {
-  std::string UnknownCommand::operator()(const std::string& command)
+  const std::string UnknownCommand::operator()(const std::string& command)
   {
     LogDebug("Executing UnknownCommand(\"%s\")", command.c_str());
-    return "Unknown command";
+    return "Unknown command. Press <h> for help\n";
   }
 }

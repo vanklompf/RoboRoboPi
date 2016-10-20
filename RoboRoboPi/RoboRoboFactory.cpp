@@ -19,7 +19,9 @@ namespace robo
   RoboRobo* RoboRoboFactory::Create()
   {
     auto client = std::unique_ptr<gloox::Client>(CreateClient());
-    auto messageHandler = new MessageHandler(*client);
+    auto commandsMap = std::make_unique<CommandsMap>();
+    CommandsMap& commandsMapRef = *commandsMap;
+    auto messageHandler = new MessageHandler(*client, std::move(commandsMap));
     auto connectionListener = new ConnectionListener(*client);
 
     client->registerMessageHandler(messageHandler);
@@ -31,9 +33,9 @@ namespace robo
     messageHandler->RegisterDefaultCommand(std::move(std::make_unique<UnknownCommand>()));
     messageHandler->RegisterCommand('s', std::move(std::make_unique<ServoCommand>(*servo)));
     messageHandler->RegisterCommand('l', std::move(std::make_unique<LedCommand>(*gpio)));
-    messageHandler->RegisterCommand('h', std::move(std::make_unique<HelpCommand>()));
     messageHandler->RegisterCommand('t', std::move(std::make_unique<TellCommand>()));
     messageHandler->RegisterCommand('p', std::move(std::make_unique<PlaySoundCommand>()));
+    messageHandler->RegisterCommand('h', std::move(std::make_unique<HelpCommand>(commandsMapRef)));
 
     auto robo = new RoboRobo(std::move(servo), std::move(client));
     return robo;

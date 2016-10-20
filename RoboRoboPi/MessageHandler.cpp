@@ -10,7 +10,7 @@
 
 namespace robo
 {
-  MessageHandler::MessageHandler(gloox::Client& client) : m_client(client){}
+  MessageHandler::MessageHandler(gloox::Client& client, std::unique_ptr<CommandsMap> commandsMap) : m_client(client), m_commands(std::move(commandsMap)) {}
 
   void MessageHandler::handleMessage(const gloox::Message& stanza, gloox::MessageSession* session)
   {
@@ -22,9 +22,9 @@ namespace robo
       char opcode = std::tolower(stanza.body().front());
 
       auto param = stanza.body().size() > 2 ? stanza.body().substr(2) : "";
-      if (m_commands.find(opcode) != m_commands.end())
+      if (m_commands->find(opcode) != m_commands->end())
       {
-        status = m_commands.at(opcode)->operator()(param);
+        status = m_commands->at(opcode)->operator()(param);
       }
       else
       {
@@ -43,7 +43,7 @@ namespace robo
 
   void MessageHandler::RegisterCommand(char opcode, std::unique_ptr<ICommand> command)
   {
-    m_commands[opcode] = std::move(command);
+    (*m_commands)[opcode] = std::move(command);
   }
 
   void MessageHandler::RegisterDefaultCommand(std::unique_ptr<ICommand> command)

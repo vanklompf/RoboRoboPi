@@ -8,7 +8,8 @@ namespace robo
   class ICommand
   {
   public:
-    virtual std::string operator()(const std::string& command) = 0;
+    virtual const std::string operator()(const std::string& command) = 0;
+    virtual const std::string GetHelp() const = 0;
   };
 }
 #endif /* ICOMMAND_H */

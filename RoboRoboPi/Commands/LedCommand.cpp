@@ -8,11 +8,17 @@ namespace robo
 {
   LedCommand::LedCommand(Gpio & gpio) : m_gpio(gpio){}
 
-  std::string LedCommand::operator()(const std::string& command)
+  const std::string LedCommand::operator()(const std::string& command)
   {
     LogDebug("Executing LedCommand(\"%s\")", command.c_str());
 
     return "ok";
+  }
+
+
+  const std::string LedCommand::GetHelp() const
+  {
+    return "Blinks LEDs\n";
   }
 }
 

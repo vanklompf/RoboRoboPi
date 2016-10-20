@@ -8,7 +8,7 @@ namespace robo
 {
   ServoCommand::ServoCommand(Servo& servo) : m_servo(servo){}
 
-  std::string ServoCommand::operator()(const std::string& command)
+  const std::string ServoCommand::operator()(const std::string& command)
   {
     LogDebug("Executing ServoCommand(\"%s\")", command.c_str());
 
@@ -36,5 +36,15 @@ namespace robo
     }
 
     return m_servo.getStatusText(status);
+  }
+  const std::string ServoCommand::GetHelp() const
+  {
+    return
+      "Control Servomotor\n"
+      "Parameters:\n"
+      "\tl - rotate step left\n"
+      "\tr - rotate step right\n"
+      "\t0-9 - rotate to defined position\n"
+      ;
   }
 }

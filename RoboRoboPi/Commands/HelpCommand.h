@@ -2,6 +2,7 @@
 #define HELP_COMMAND_H
 
 #include "ICommand.h"
+#include "MessageHandler.h"
 #include <string>
 
 namespace robo
@@ -9,7 +10,11 @@ namespace robo
   class HelpCommand final : public ICommand
   {
   public:
-    virtual std::string operator()(const std::string& command);
+    HelpCommand(const CommandsMap& commands);
+    const std::string operator()(const std::string& command);
+    const std::string GetHelp() const;
+  private:
+    const CommandsMap& m_commands;
   };
 }
 

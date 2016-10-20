@@ -9,7 +9,8 @@ namespace robo
   class TellCommand final : public ICommand
   {
   public:
-    std::string operator()(const std::string& command);
+    const std::string operator()(const std::string& command);
+    const std::string TellCommand::GetHelp() const;
   };
 }
 

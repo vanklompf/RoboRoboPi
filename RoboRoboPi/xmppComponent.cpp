@@ -1,7 +1,5 @@
 #include "xmppComponent.h"
-
 #include "gloox\src\component.h"
-
 #include "logger.h"
 
 namespace robo

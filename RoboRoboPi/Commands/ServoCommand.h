@@ -12,7 +12,8 @@ namespace robo
   {
   public:
     ServoCommand(Servo& servo);
-    std::string operator()(const std::string& command);
+    const std::string operator()(const std::string& command);
+    const std::string ServoCommand::GetHelp() const;
 
   private:
     Servo& m_servo;

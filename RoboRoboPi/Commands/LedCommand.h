@@ -12,7 +12,8 @@ namespace robo
   {
   public:
     LedCommand(Gpio& gpio);
-    virtual std::string operator()(const std::string& command);
+    const std::string operator()(const std::string& command);
+    const std::string LedCommand::GetHelp() const;
 
   private:
     Gpio& m_gpio;

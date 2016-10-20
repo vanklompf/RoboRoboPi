@@ -4,6 +4,8 @@
 #include "gloox\src\messagehandler.h"
 #include "gloox\src\gloox.h"
 #include <memory>
+#include <map>
+#include "ICommand.h"
 
 namespace gloox
 {
@@ -17,10 +19,12 @@ namespace robo
   class Servo;
   class ICommand;
 
+  typedef std::map<char, std::unique_ptr<ICommand>> CommandsMap;
+
   class MessageHandler final : public gloox::MessageHandler
   {
   public:
-    MessageHandler(gloox::Client& client);
+    MessageHandler(gloox::Client& client, std::unique_ptr<CommandsMap> commandsMap);
     void RegisterCommand(char opcode, std::unique_ptr<ICommand> command);
     void RegisterDefaultCommand(std::unique_ptr<ICommand> command);
 
@@ -29,7 +33,7 @@ namespace robo
 
   private:
     gloox::Client& m_client;
-    std::map<char, std::unique_ptr<ICommand>> m_commands;
+    std::unique_ptr<CommandsMap> m_commands;
     std::unique_ptr<ICommand> m_default_command;
   };
 }

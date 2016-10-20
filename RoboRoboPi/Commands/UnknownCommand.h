@@ -9,7 +9,8 @@ namespace robo
   class UnknownCommand final : public ICommand
   {
   public:
-    virtual std::string operator()(const std::string& command);
+    const std::string operator()(const std::string& command);
+    const std::string GetHelp() const { return std::string(); };
   };
 }
 #endif /* UNKNOWN_COMMAND_H */
