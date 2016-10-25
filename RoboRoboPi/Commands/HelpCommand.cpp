@@ -13,8 +13,8 @@ namespace robo
   const std::string HelpCommand::operator()(const std::string& command)
   {
     LogDebug("Executing HelpCommand(\"%s\")", command.c_str());
-    std::stringstream ss("Available commands:");
-    ss << std::endl;
+    std::stringstream ss;
+    ss << "Available commands:" << std::endl;
 
     for (auto const &cmd : m_commands)
     {

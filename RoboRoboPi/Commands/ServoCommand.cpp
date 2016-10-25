@@ -40,7 +40,7 @@ namespace robo
   const std::string ServoCommand::GetHelp() const
   {
     return
-      "Control Servomotor\n"
+      "Controls Servomotor\n"
       "Parameters:\n"
       "\tl - rotate step left\n"
       "\tr - rotate step right\n"
