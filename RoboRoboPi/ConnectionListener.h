@@ -1,8 +1,8 @@
 #ifndef CONNECTION_LISTENER_H
 #define CONNECTION_LISTENER_H
 
-#include "gloox\src\gloox.h"
-#include "gloox\src\connectionlistener.h"
+#include "gloox/src/gloox.h"
+#include "gloox/src/connectionlistener.h"
 
 namespace gloox
 {

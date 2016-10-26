@@ -41,7 +41,7 @@ int main(void)
     LogDebug("RoboRoboPi Started");
     atexit(exitHandler);
 
-    wiringPiSetup();
+    //wiringPiSetup();
 
     std::thread t1(blink);
     std::thread t2(component);

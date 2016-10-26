@@ -1,8 +1,8 @@
 #ifndef XMPP_HANDLER_H
 #define XMPP_HANDLER_H
-#include "gloox\src\messagehandler.h"
-#include "gloox\src\connectionlistener.h"
-#include "gloox\src\gloox.h"
+#include "gloox/src/messagehandler.h"
+#include "gloox/src/connectionlistener.h"
+#include "gloox/src/gloox.h"
 #include <memory>
 #include <map>
 

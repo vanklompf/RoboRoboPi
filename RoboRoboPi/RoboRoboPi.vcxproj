@@ -145,8 +145,16 @@
     <ClCompile Include="RoboRoboFactory.cpp" />
     <ClCompile Include="servo.cpp" />
     <ClCompile Include="logger.cpp" />
-    <ClCompile Include="stubs\SoundPlayer.cpp" />
-    <ClCompile Include="stubs\SpeechSynthesizer.cpp" />
+    <ClCompile Include="SoundPlayer_linux.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="SpeechSynthesizer_linux.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="stubs\SoundPlayer_windows.cpp" />
+    <ClCompile Include="stubs\SpeechSynthesizer_windows.cpp" />
     <ClCompile Include="xmppComponent.cpp" />
     <ClCompile Include="RoboRobo.cpp" />
   </ItemGroup>
@@ -164,8 +172,8 @@
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="RoboRoboFactory.h" />
     <ClInclude Include="servo.h" />
-    <ClInclude Include="stubs\SoundPlayer.h" />
-    <ClInclude Include="stubs\SpeechSynthesizer.h" />
+    <ClInclude Include="SoundPlayer.h" />
+    <ClInclude Include="SpeechSynthesizer.h" />
     <ClInclude Include="stubs\wiringPi.h" />
     <ClInclude Include="xmppComponent.h" />
     <ClInclude Include="RoboRobo.h" />

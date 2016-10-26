@@ -2,16 +2,16 @@
 #include "RoboRobo.h"
 #include "servo.h"
 #include "Gpio.h"
-#include "ServoCommand.h"
-#include "LedCommand.h"
-#include "TellCommand.h"
-#include "PlaySoundCommand.h"
-#include "HelpCommand.h"
-#include "UnknownCommand.h"
+#include "commands/ServoCommand.h"
+#include "commands/LedCommand.h"
+#include "commands/TellCommand.h"
+#include "commands/PlaySoundCommand.h"
+#include "commands/HelpCommand.h"
+#include "commands/UnknownCommand.h"
 #include "MessageHandler.h"
 #include "ConnectionListener.h"
 
-#include "gloox\src\client.h"
+#include "gloox/src/client.h"
 #include <memory>
 
 namespace robo

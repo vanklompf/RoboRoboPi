@@ -1,6 +1,6 @@
 #include "ConnectionListener.h"
 
-#include "gloox\src\client.h"
+#include "gloox/src/client.h"
 #include "logger.h"
 
 namespace robo

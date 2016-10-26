@@ -1,6 +1,6 @@
-#include "gloox\src\client.h"
-#include "gloox\src\messagehandler.h"
-#include "gloox\src\message.h"
+#include "gloox/src/client.h"
+#include "gloox/src/messagehandler.h"
+#include "gloox/src/message.h"
 
 #include "RoboRobo.h"
 #include "servo.h"

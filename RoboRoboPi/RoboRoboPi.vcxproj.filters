@@ -10,36 +10,38 @@
     <ClCompile Include="servo.cpp" />
     <ClCompile Include="ConnectionListener.cpp" />
     <ClCompile Include="Commands\ServoCommand.cpp">
-      <Filter>Commands</Filter>
+      <Filter>commands</Filter>
     </ClCompile>
     <ClCompile Include="Commands\HelpCommand.cpp">
-      <Filter>Commands</Filter>
+      <Filter>commands</Filter>
     </ClCompile>
     <ClCompile Include="Commands\UnknownCommand.cpp">
-      <Filter>Commands</Filter>
+      <Filter>commands</Filter>
     </ClCompile>
     <ClCompile Include="Commands\LedCommand.cpp">
-      <Filter>Commands</Filter>
+      <Filter>commands</Filter>
     </ClCompile>
     <ClCompile Include="Gpio.cpp" />
-    <ClCompile Include="stubs\SpeechSynthesizer.cpp">
-      <Filter>Stubs</Filter>
-    </ClCompile>
     <ClCompile Include="Commands\TellCommand.cpp">
-      <Filter>Commands</Filter>
+      <Filter>commands</Filter>
     </ClCompile>
     <ClCompile Include="Commands\PlaySoundCommand.cpp">
-      <Filter>Commands</Filter>
+      <Filter>commands</Filter>
     </ClCompile>
-    <ClCompile Include="stubs\SoundPlayer.cpp">
-      <Filter>Stubs</Filter>
+    <ClCompile Include="SoundPlayer_linux.cpp" />
+    <ClCompile Include="stubs\SpeechSynthesizer_windows.cpp">
+      <Filter>stubs</Filter>
     </ClCompile>
+    <ClCompile Include="stubs\SoundPlayer_windows.cpp">
+      <Filter>stubs</Filter>
+    </ClCompile>
+    <ClCompile Include="SpeechSynthesizer_linux.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="logger.h" />
     <ClInclude Include="xmppComponent.h" />
     <ClInclude Include="stubs\wiringPi.h">
-      <Filter>Stubs</Filter>
+      <Filter>stubs</Filter>
     </ClInclude>
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="RoboRoboFactory.h" />
@@ -47,71 +49,67 @@
     <ClInclude Include="servo.h" />
     <ClInclude Include="ConnectionListener.h" />
     <ClInclude Include="Commands\ICommand.h">
-      <Filter>Commands</Filter>
+      <Filter>commands</Filter>
     </ClInclude>
     <ClInclude Include="Commands\ServoCommand.h">
-      <Filter>Commands</Filter>
+      <Filter>commands</Filter>
     </ClInclude>
     <ClInclude Include="Commands\HelpCommand.h">
-      <Filter>Commands</Filter>
+      <Filter>commands</Filter>
     </ClInclude>
     <ClInclude Include="Commands\UnknownCommand.h">
-      <Filter>Commands</Filter>
+      <Filter>commands</Filter>
     </ClInclude>
     <ClInclude Include="Commands\LedCommand.h">
-      <Filter>Commands</Filter>
+      <Filter>commands</Filter>
     </ClInclude>
     <ClInclude Include="Gpio.h" />
-    <ClInclude Include="stubs\SpeechSynthesizer.h">
-      <Filter>Stubs</Filter>
-    </ClInclude>
     <ClInclude Include="Commands\TellCommand.h">
-      <Filter>Commands</Filter>
+      <Filter>commands</Filter>
     </ClInclude>
     <ClInclude Include="Commands\PlaySoundCommand.h">
-      <Filter>Commands</Filter>
+      <Filter>commands</Filter>
     </ClInclude>
-    <ClInclude Include="stubs\SoundPlayer.h">
-      <Filter>Stubs</Filter>
-    </ClInclude>
+    <ClInclude Include="SoundPlayer.h" />
+    <ClInclude Include="SpeechSynthesizer.h" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Stubs">
+    <Filter Include="sounds">
+      <UniqueIdentifier>{40ea731a-14c3-4f37-8712-f806c8a14678}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stubs">
       <UniqueIdentifier>{96edac7f-c1b2-4c04-b6f6-0fee7679578f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Commands">
+    <Filter Include="commands">
       <UniqueIdentifier>{23b6f2c5-8532-41e9-a05e-326240bf4dc3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sounds">
-      <UniqueIdentifier>{40ea731a-14c3-4f37-8712-f806c8a14678}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="speak.ps1">
-      <Filter>Stubs</Filter>
+      <Filter>stubs</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Media Include="Sounds\apocalypse.wav">
-      <Filter>Sounds</Filter>
+      <Filter>sounds</Filter>
     </Media>
     <Media Include="Sounds\base.wav">
-      <Filter>Sounds</Filter>
+      <Filter>sounds</Filter>
     </Media>
     <Media Include="Sounds\burning.wav">
-      <Filter>Sounds</Filter>
+      <Filter>sounds</Filter>
     </Media>
     <Media Include="Sounds\napalm.wav">
-      <Filter>Sounds</Filter>
+      <Filter>sounds</Filter>
     </Media>
     <Media Include="Sounds\nuclear.wav">
-      <Filter>Sounds</Filter>
+      <Filter>sounds</Filter>
     </Media>
     <Media Include="Sounds\system.wav">
-      <Filter>Sounds</Filter>
+      <Filter>sounds</Filter>
     </Media>
     <Media Include="Sounds\yes.wav">
-      <Filter>Sounds</Filter>
+      <Filter>sounds</Filter>
     </Media>
   </ItemGroup>
 </Project>

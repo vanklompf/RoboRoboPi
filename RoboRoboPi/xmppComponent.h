@@ -1,7 +1,7 @@
 #ifndef XMPP_COMPONENT_H
 #define XMPP_COMPONENT_H
-#include "gloox\src\connectionlistener.h"
-#include "gloox\src\gloox.h"
+#include "gloox/src/connectionlistener.h"
+#include "gloox/src/gloox.h"
 
 namespace gloox
 {

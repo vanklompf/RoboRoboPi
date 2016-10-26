@@ -1,12 +1,12 @@
 #include "MessageHandler.h"
 
-#include "gloox\src\client.h"
-#include "gloox\src\messagehandler.h"
-#include "gloox\src\message.h"
+#include "gloox/src/client.h"
+#include "gloox/src/messagehandler.h"
+#include "gloox/src/message.h"
 
 #include <cctype>
 #include "logger.h"
-#include "ICommand.h"
+#include "commands/ICommand.h"
 
 namespace robo
 {

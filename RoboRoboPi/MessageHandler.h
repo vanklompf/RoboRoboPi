@@ -1,11 +1,11 @@
 #ifndef MESSAGE_HANDLER_H
 #define MESSAGE_HANDLER_H
 
-#include "gloox\src\messagehandler.h"
-#include "gloox\src\gloox.h"
+#include "gloox/src/messagehandler.h"
+#include "gloox/src/gloox.h"
 #include <memory>
 #include <map>
-#include "ICommand.h"
+#include "commands/ICommand.h"
 
 namespace gloox
 {
