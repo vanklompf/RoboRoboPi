@@ -2,11 +2,14 @@
 #include <chrono>
 #include <thread>
 #include <wiringPi.h>
+#include <pigpio.h>
 
 #include "RoboRobo.h"
 #include "RoboRoboFactory.h"
 #include "xmppComponent.h"
 #include "logger.h"
+
+
 using namespace std::literals;
 using namespace robo;
 
@@ -42,6 +45,7 @@ int main(void)
     atexit(exitHandler);
 
     //wiringPiSetup();
+    gpioInitialise();
 
     std::thread t1(blink);
     std::thread t2(component);

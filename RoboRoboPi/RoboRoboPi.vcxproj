@@ -195,6 +195,9 @@
     <Media Include="Sounds\system.wav" />
     <Media Include="Sounds\yes.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

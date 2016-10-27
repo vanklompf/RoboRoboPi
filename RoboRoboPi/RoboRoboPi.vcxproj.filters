@@ -112,4 +112,7 @@
       <Filter>sounds</Filter>
     </Media>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
 </Project>

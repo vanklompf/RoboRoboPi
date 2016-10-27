@@ -24,7 +24,7 @@ namespace robo
 
   void RoboRobo::Init()
   {
-    m_servo->init();
+    //m_servo->init();
     m_client->connect();
   }
 }
