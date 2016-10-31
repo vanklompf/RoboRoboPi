@@ -2,7 +2,7 @@
 #include <chrono>
 #include <thread>
 #include <wiringPi.h>
-#include <pigpio.h>
+//#include <pigpio.h>
 
 #include "RoboRobo.h"
 #include "RoboRoboFactory.h"
@@ -45,10 +45,10 @@ int main(void)
     atexit(exitHandler);
 
     //wiringPiSetup();
-    gpioInitialise();
+    //gpioInitialise();
 
     std::thread t1(blink);
-    std::thread t2(component);
+    //std::thread t2(component);
 
     auto robo = RoboRoboFactory::Create();
     robo->Init();
