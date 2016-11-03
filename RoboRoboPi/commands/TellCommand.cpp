@@ -5,18 +5,21 @@
 
 namespace robo
 {
+  TellCommand::TellCommand(SpeechSynthesizer& synthesizer) : m_synthesizer(synthesizer)
+  {
+  }
+
   const std::string TellCommand::operator()(const std::string& command)
   {
     LogDebug("Executing SpeakCommand(\"%s\")", command.c_str());
-    int status = Say(command);
 
-    if (status == 0)
+    if (m_synthesizer.Say(command))
     {
       return "OK";
     }
     else
     {
-      return "System error: " + std::to_string(status);
+      return "System error";
     }
   }
 

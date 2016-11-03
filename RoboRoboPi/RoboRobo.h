@@ -14,18 +14,20 @@ namespace gloox
 namespace robo
 {
   class Servo;
+  class SpeechSynthesizer;
   class ICommand;
 
   class RoboRobo final
   {
   public:
-    RoboRobo(std::unique_ptr<Servo> servo, std::unique_ptr<gloox::Client> xmppClient);
+    RoboRobo(std::unique_ptr<Servo> servo, std::unique_ptr<SpeechSynthesizer> synthesizer, std::unique_ptr<gloox::Client> xmppClient);
     ~RoboRobo();
     void Init();
 
   private:
-    std::unique_ptr<gloox::Client> m_client;
     std::unique_ptr<Servo> m_servo;
+    std::unique_ptr<SpeechSynthesizer> m_synthesizer;
+    std::unique_ptr<gloox::Client> m_client;
   };
 }
 #endif /* XMPP_HANDLER_H */

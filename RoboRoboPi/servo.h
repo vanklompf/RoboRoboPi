@@ -14,7 +14,7 @@ namespace robo
   class Servo
   {
   public:
-    void init();
+    void Init();
     const char* getStatusText(servo_status_t status) const;
     servo_status_t SetAngle(int16_t angle);
     servo_status_t StepLeft();

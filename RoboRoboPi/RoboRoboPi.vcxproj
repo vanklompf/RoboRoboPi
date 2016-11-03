@@ -74,7 +74,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)stubs;$(ProjectDir)Commands;$(ProjectDir);$(ProjectDir)..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)stubs;$(ProjectDir)commands;$(ProjectDir);$(ProjectDir)..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
@@ -103,7 +103,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)stubs;$(ProjectDir)Commands;$(ProjectDir);$(ProjectDir)..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)stubs;$(ProjectDir)commands;$(ProjectDir);$(ProjectDir)..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
@@ -132,12 +132,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Commands\HelpCommand.cpp" />
-    <ClCompile Include="Commands\LedCommand.cpp" />
-    <ClCompile Include="Commands\PlaySoundCommand.cpp" />
-    <ClCompile Include="Commands\ServoCommand.cpp" />
-    <ClCompile Include="Commands\TellCommand.cpp" />
-    <ClCompile Include="Commands\UnknownCommand.cpp" />
+    <ClCompile Include="commands\HelpCommand.cpp" />
+    <ClCompile Include="commands\LedCommand.cpp" />
+    <ClCompile Include="commands\PlaySoundCommand.cpp" />
+    <ClCompile Include="commands\ServoCommand.cpp" />
+    <ClCompile Include="commands\TellCommand.cpp" />
+    <ClCompile Include="commands\UnknownCommand.cpp" />
     <ClCompile Include="ConnectionListener.cpp" />
     <ClCompile Include="Gpio.cpp" />
     <ClCompile Include="main.cpp" />
@@ -159,13 +159,13 @@
     <ClCompile Include="RoboRobo.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Commands\HelpCommand.h" />
-    <ClInclude Include="Commands\ICommand.h" />
-    <ClInclude Include="Commands\LedCommand.h" />
-    <ClInclude Include="Commands\PlaySoundCommand.h" />
-    <ClInclude Include="Commands\ServoCommand.h" />
-    <ClInclude Include="Commands\TellCommand.h" />
-    <ClInclude Include="Commands\UnknownCommand.h" />
+    <ClInclude Include="commands\HelpCommand.h" />
+    <ClInclude Include="commands\ICommand.h" />
+    <ClInclude Include="commands\LedCommand.h" />
+    <ClInclude Include="commands\PlaySoundCommand.h" />
+    <ClInclude Include="commands\ServoCommand.h" />
+    <ClInclude Include="commands\TellCommand.h" />
+    <ClInclude Include="commands\UnknownCommand.h" />
     <ClInclude Include="ConnectionListener.h" />
     <ClInclude Include="Gpio.h" />
     <ClInclude Include="logger.h" />
@@ -187,13 +187,13 @@
     <None Include="speak.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="Sounds\apocalypse.wav" />
-    <Media Include="Sounds\base.wav" />
-    <Media Include="Sounds\burning.wav" />
-    <Media Include="Sounds\napalm.wav" />
-    <Media Include="Sounds\nuclear.wav" />
-    <Media Include="Sounds\system.wav" />
-    <Media Include="Sounds\yes.wav" />
+    <Media Include="sounds\apocalypse.wav" />
+    <Media Include="sounds\base.wav" />
+    <Media Include="sounds\burning.wav" />
+    <Media Include="sounds\napalm.wav" />
+    <Media Include="sounds\nuclear.wav" />
+    <Media Include="sounds\system.wav" />
+    <Media Include="sounds\yes.wav" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

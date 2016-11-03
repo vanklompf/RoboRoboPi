@@ -29,14 +29,15 @@ namespace robo
     "SERVO_ERROR"
   };
 
-  void Servo::init()
+  void Servo::Init()
   {
-    pinMode(SERVO_PIN, PWM_OUTPUT);
-    pwmSetMode(PWM_MODE_MS);
-    pwmSetClock(384);
-    pwmSetRange(1000);
+    //pinMode(SERVO_PIN, PWM_OUTPUT);
+    //pwmSetMode(PWM_MODE_MS);
+    //pwmSetClock(384);
+    //pwmSetRange(1000);
 
     SetAngle(0);
+    LogDebug("Servo Initialized.");
   }
 
   servo_status_t Servo::setGpioRegister(int16_t value)
