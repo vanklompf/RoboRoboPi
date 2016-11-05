@@ -11,7 +11,7 @@ namespace robo
 
   const std::string TellCommand::operator()(const std::string& command)
   {
-    LogDebug("Executing SpeakCommand(\"%s\")", command.c_str());
+    LogDebug("Executing TellCommand(\"%s\")", command.c_str());
 
     if (m_synthesizer.Say(command))
     {

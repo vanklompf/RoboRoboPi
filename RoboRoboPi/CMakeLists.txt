@@ -11,7 +11,7 @@ else()
     message( FATAL_ERROR "Support for C++17 is required." )
 endif()
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Os")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Os")
 
 set(SOURCE_FILES 
 ConnectionListener.cpp
@@ -39,9 +39,15 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 file(COPY sounds DESTINATION .)
 add_executable(RoboRoboPi ${SOURCE_FILES})
+target_link_libraries(RoboRoboPi /usr/local/lib/libpigpio.so)
 target_link_libraries(RoboRoboPi -lwiringPi)
 target_link_libraries(RoboRoboPi -lpthread)
+
 target_link_libraries(RoboRoboPi -lgloox)
-target_link_libraries(RoboRoboPi -lespeak)
+
+target_link_libraries(RoboRoboPi ${CMAKE_CURRENT_SOURCE_DIR}/../picotts/libtts.a)
+target_link_libraries(RoboRoboPi -lasound)
+target_link_libraries(RoboRoboPi -lexpat)
+
 target_link_libraries(RoboRoboPi -lstdc++fs)
-target_link_libraries(RoboRoboPi /usr/local/lib/libpigpio.so)
+

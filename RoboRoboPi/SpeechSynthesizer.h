@@ -2,6 +2,11 @@
 #define SPEECH_SYNTHESIZER_H
 #include <string>
 
+namespace android
+{
+  class TtsEngine;
+}
+
 
 namespace robo
 {
@@ -10,6 +15,11 @@ namespace robo
   public:
     void Init();
     bool Say(std::string phrase);
+    ~SpeechSynthesizer();
+  private:
+    bool AlsaInit();
+    void TtsInit();
+    android::TtsEngine* m_ttsEngine;
   };
 
 }
