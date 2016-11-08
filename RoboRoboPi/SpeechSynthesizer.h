@@ -7,21 +7,21 @@ namespace android
   class TtsEngine;
 }
 
-
 namespace robo
 {
+  class AlsaPcmPlayer;
+
   class SpeechSynthesizer
   {
   public:
+    SpeechSynthesizer(const AlsaPcmPlayer& alsaPcmPlayer);
     void Init();
     bool Say(std::string phrase);
     ~SpeechSynthesizer();
   private:
-    bool AlsaInit();
-    void TtsInit();
+    const AlsaPcmPlayer& m_pcmPlayer;
     android::TtsEngine* m_ttsEngine;
   };
-
 }
 
 #endif /* SPEECH_SYNTHESIZER_H */

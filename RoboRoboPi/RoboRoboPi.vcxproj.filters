@@ -36,6 +36,7 @@
       <Filter>stubs</Filter>
     </ClCompile>
     <ClCompile Include="SpeechSynthesizer_linux.cpp" />
+    <ClCompile Include="AlsaPcmPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="logger.h" />
@@ -72,6 +73,7 @@
     </ClInclude>
     <ClInclude Include="SoundPlayer.h" />
     <ClInclude Include="SpeechSynthesizer.h" />
+    <ClInclude Include="AlsaPcmPlayer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="sounds">

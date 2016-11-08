@@ -14,6 +14,7 @@ endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Os")
 
 set(SOURCE_FILES 
+AlsaPcmPlayer.cpp
 ConnectionListener.cpp
 Gpio.cpp
 logger.cpp
