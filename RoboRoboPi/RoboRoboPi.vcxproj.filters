@@ -35,8 +35,9 @@
     <ClCompile Include="stubs\SoundPlayer_windows.cpp">
       <Filter>stubs</Filter>
     </ClCompile>
-    <ClCompile Include="SpeechSynthesizer_linux.cpp" />
     <ClCompile Include="AlsaPcmPlayer.cpp" />
+    <ClCompile Include="ISpeechSynthesizer.h" />
+    <ClCompile Include="SpeechSynthesizerTts.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="logger.h" />
@@ -72,8 +73,8 @@
       <Filter>commands</Filter>
     </ClInclude>
     <ClInclude Include="SoundPlayer.h" />
-    <ClInclude Include="SpeechSynthesizer.h" />
     <ClInclude Include="AlsaPcmPlayer.h" />
+    <ClInclude Include="SpeechSynthesizerTts.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="sounds">

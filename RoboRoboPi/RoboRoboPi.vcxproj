@@ -144,6 +144,7 @@
     <ClCompile Include="commands\UnknownCommand.cpp" />
     <ClCompile Include="ConnectionListener.cpp" />
     <ClCompile Include="Gpio.cpp" />
+    <ClCompile Include="ISpeechSynthesizer.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageHandler.cpp" />
     <ClCompile Include="RoboRoboFactory.cpp" />
@@ -153,7 +154,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="SpeechSynthesizer_linux.cpp">
+    <ClCompile Include="SpeechSynthesizerTts.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -181,7 +182,10 @@
     <ClInclude Include="RoboRoboFactory.h" />
     <ClInclude Include="servo.h" />
     <ClInclude Include="SoundPlayer.h" />
-    <ClInclude Include="SpeechSynthesizer.h" />
+    <ClInclude Include="SpeechSynthesizerTts.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="stubs\wiringPi.h" />
     <ClInclude Include="xmppComponent.h" />
     <ClInclude Include="RoboRobo.h" />
