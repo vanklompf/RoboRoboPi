@@ -1,11 +1,11 @@
 #include "commands/TellCommand.h"
 #include "logger.h"
-#include "SpeechSynthesizer.h"
+#include "ISpeechSynthesizer.h"
 #include <string>
 
 namespace robo
 {
-  TellCommand::TellCommand(SpeechSynthesizer& synthesizer) : m_synthesizer(synthesizer)
+  TellCommand::TellCommand(ISpeechSynthesizer& synthesizer) : m_synthesizer(synthesizer)
   {
   }
 
@@ -27,7 +27,6 @@ namespace robo
   {
     return
       "Tell\n"
-      "Parameter: <words to be spoken>\n"
-      ;
+      "Parameter: <words to be spoken>\n";
   }
 }

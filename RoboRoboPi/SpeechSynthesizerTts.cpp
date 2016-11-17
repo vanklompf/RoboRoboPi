@@ -1,14 +1,14 @@
 #include "SpeechSynthesizerTts.h"
 #include "logger.h"
 #include "picotts/TtsEngine.h"
-#include "AlsaPcmPlayer.h"
+#include "ISoundPlayer.h"
 
 #include <iterator>
 #include <functional>
 using namespace android;
 namespace robo
 {
-  SpeechSynthesizerTts::SpeechSynthesizerTts(const AlsaPcmPlayer& alsaPcmPlayer) : m_pcmPlayer(alsaPcmPlayer)
+  SpeechSynthesizerTts::SpeechSynthesizerTts(const ISoundPlayer& soundPlayer) : m_soundPlayer(soundPlayer)
   {
   }
 
@@ -50,7 +50,7 @@ namespace robo
       usleep(100);
     }
 
-    m_pcmPlayer.Play(s_buffer.data(), OUTPUT_BUFFER_SIZE);
+    m_soundPlayer.PlayPcm(s_buffer.data(), OUTPUT_BUFFER_SIZE);
 
     delete[] synthBuffer;
     return true;

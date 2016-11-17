@@ -132,7 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AlsaPcmPlayer.cpp">
+    <ClCompile Include="AlsaSoundPlayer.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -144,29 +144,32 @@
     <ClCompile Include="commands\UnknownCommand.cpp" />
     <ClCompile Include="ConnectionListener.cpp" />
     <ClCompile Include="Gpio.cpp" />
+    <ClCompile Include="ISoundPlayer.h" />
     <ClCompile Include="ISpeechSynthesizer.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageHandler.cpp" />
     <ClCompile Include="RoboRoboFactory.cpp" />
     <ClCompile Include="servo.cpp" />
     <ClCompile Include="logger.cpp" />
+    <ClCompile Include="SoundPlayerFactory.cpp" />
     <ClCompile Include="SoundPlayer_linux.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="SpeechSynthesizerFactory.cpp" />
     <ClCompile Include="SpeechSynthesizerTts.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="stubs\SoundPlayer_windows.cpp" />
-    <ClCompile Include="stubs\SpeechSynthesizer_windows.cpp" />
+    <ClCompile Include="stubs\SpeechSynthesizerPs.cpp" />
     <ClCompile Include="xmppComponent.cpp" />
     <ClCompile Include="RoboRobo.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AlsaPcmPlayer.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    <ClInclude Include="AlsaSoundPlayer.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="commands\HelpCommand.h" />
     <ClInclude Include="commands\ICommand.h" />
@@ -179,9 +182,13 @@
     <ClInclude Include="Gpio.h" />
     <ClInclude Include="logger.h" />
     <ClInclude Include="MessageHandler.h" />
+    <ClInclude Include="NullSoundPlayer.h" />
     <ClInclude Include="RoboRoboFactory.h" />
     <ClInclude Include="servo.h" />
     <ClInclude Include="SoundPlayer.h" />
+    <ClInclude Include="SoundPlayerFactory.h" />
+    <ClInclude Include="SpeechSynthesizerFactory.h" />
+    <ClInclude Include="SpeechSynthesizerPs.h" />
     <ClInclude Include="SpeechSynthesizerTts.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>

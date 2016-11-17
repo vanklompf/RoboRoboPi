@@ -2,8 +2,10 @@
 #include "RoboRobo.h"
 #include "servo.h"
 #include "Gpio.h"
-#include "SpeechSynthesizer.h"
-#include "AlsaPcmPlayer.h"
+#include "ISpeechSynthesizer.h"
+#include "ISoundPlayer.h"
+#include "SpeechSynthesizerFactory.h"
+#include "SoundPlayerFactory.h"
 #include "commands/ServoCommand.h"
 #include "commands/LedCommand.h"
 #include "commands/TellCommand.h"
@@ -22,6 +24,7 @@ namespace robo
   {
     auto client = std::unique_ptr<gloox::Client>(CreateClient());
     auto commandsMap = std::make_unique<CommandsMap>();
+    const CommandsMap& commandsMapRef = *commandsMap;
     auto messageHandler = new MessageHandler(*client, std::move(commandsMap));
     auto connectionListener = new ConnectionListener(*client);
 
@@ -29,8 +32,8 @@ namespace robo
     client->registerConnectionListener(connectionListener);
 
     auto servo = std::make_unique<Servo>();
-    auto pcmPlayer = std::make_unique<AlsaPcmPlayer>();
-    auto synthesizer = std::make_unique<SpeechSynthesizer>(*pcmPlayer);
+    auto soundPlayer = SoundPlayerFactory::CreateUniquePointer();
+    auto synthesizer = SpeechSynthesizerFactory::CreateUniquePointer(*soundPlayer);
     auto gpio = std::make_unique<Gpio>();
 
 
@@ -39,9 +42,9 @@ namespace robo
     messageHandler->RegisterCommand('l', std::move(std::make_unique<LedCommand>(*gpio)));
     messageHandler->RegisterCommand('t', std::move(std::make_unique<TellCommand>(*synthesizer)));
     messageHandler->RegisterCommand('p', std::move(std::make_unique<PlaySoundCommand>()));
-    messageHandler->RegisterCommand('h', std::move(std::make_unique<HelpCommand>(*commandsMap)));
+    messageHandler->RegisterCommand('h', std::move(std::make_unique<HelpCommand>(commandsMapRef)));
 
-    auto robo = new RoboRobo(std::move(servo), std::move(pcmPlayer), std::move(synthesizer), std::move(client));
+    auto robo = new RoboRobo(std::move(servo), std::move(soundPlayer), std::move(synthesizer), std::move(client));
     return robo;
   }
 

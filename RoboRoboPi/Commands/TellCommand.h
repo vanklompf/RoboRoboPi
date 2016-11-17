@@ -6,16 +6,16 @@
 
 namespace robo
 {
-  class SpeechSynthesizer;
+  class ISpeechSynthesizer;
 
   class TellCommand final : public ICommand
   {
   public:
-    TellCommand(SpeechSynthesizer& synthesizer);
+    TellCommand(ISpeechSynthesizer& synthesizer);
     const std::string operator()(const std::string& command);
     const std::string GetHelp() const;
   private:
-    SpeechSynthesizer& m_synthesizer;
+    ISpeechSynthesizer& m_synthesizer;
   };
 }
 

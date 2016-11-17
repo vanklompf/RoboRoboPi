@@ -29,15 +29,18 @@
       <Filter>commands</Filter>
     </ClCompile>
     <ClCompile Include="SoundPlayer_linux.cpp" />
-    <ClCompile Include="stubs\SpeechSynthesizer_windows.cpp">
-      <Filter>stubs</Filter>
-    </ClCompile>
     <ClCompile Include="stubs\SoundPlayer_windows.cpp">
       <Filter>stubs</Filter>
     </ClCompile>
-    <ClCompile Include="AlsaPcmPlayer.cpp" />
     <ClCompile Include="ISpeechSynthesizer.h" />
     <ClCompile Include="SpeechSynthesizerTts.cpp" />
+    <ClCompile Include="SpeechSynthesizerFactory.cpp" />
+    <ClCompile Include="stubs\SpeechSynthesizerPs.cpp">
+      <Filter>stubs</Filter>
+    </ClCompile>
+    <ClCompile Include="AlsaSoundPlayer.cpp" />
+    <ClCompile Include="ISoundPlayer.h" />
+    <ClCompile Include="SoundPlayerFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="logger.h" />
@@ -73,8 +76,12 @@
       <Filter>commands</Filter>
     </ClInclude>
     <ClInclude Include="SoundPlayer.h" />
-    <ClInclude Include="AlsaPcmPlayer.h" />
     <ClInclude Include="SpeechSynthesizerTts.h" />
+    <ClInclude Include="SpeechSynthesizerFactory.h" />
+    <ClInclude Include="SpeechSynthesizerPs.h" />
+    <ClInclude Include="AlsaSoundPlayer.h" />
+    <ClInclude Include="SoundPlayerFactory.h" />
+    <ClInclude Include="NullSoundPlayer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="sounds">

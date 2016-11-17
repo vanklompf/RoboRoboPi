@@ -14,7 +14,7 @@ endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Os")
 
 set(SOURCE_FILES 
-AlsaPcmPlayer.cpp
+AlsaSoundPlayer.cpp
 ConnectionListener.cpp
 Gpio.cpp
 logger.cpp
@@ -24,7 +24,9 @@ RoboRoboFactory.cpp
 RoboRobo.cpp
 servo.cpp
 SoundPlayer_linux.cpp
-SpeechSynthesizer_linux.cpp
+SoundPlayerFactory.cpp
+SpeechSynthesizerFactory.cpp
+SpeechSynthesizerTts.cpp
 xmppComponent.cpp
 commands/HelpCommand.cpp
 commands/LedCommand.cpp

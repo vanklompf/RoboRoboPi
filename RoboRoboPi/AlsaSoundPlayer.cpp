@@ -1,17 +1,17 @@
-#include "AlsaPcmPlayer.h"
+#include "AlsaSoundPlayer.h"
 #include <algorithm>
 #include <alsa/asoundlib.h>
 #include "logger.h"
 
 namespace robo
 {
-  AlsaPcmPlayer::~AlsaPcmPlayer()
+  AlsaSoundPlayer::~AlsaSoundPlayer()
   {
     snd_pcm_drain(m_pcmHandle);
     snd_pcm_close(m_pcmHandle);
   }
 
-  void AlsaPcmPlayer::Init()
+  void AlsaSoundPlayer::Init()
   {
     LogDebug("Initializing Alsa...");
     snd_pcm_hw_params_t* hwParams;
@@ -64,7 +64,7 @@ namespace robo
     }
   }
 
-  void AlsaPcmPlayer::Play(const int8_t* buf, size_t size) const
+  void AlsaSoundPlayer::PlayPcm(const int8_t* buf, size_t size) const
   {
     while (size > 0)
     {
