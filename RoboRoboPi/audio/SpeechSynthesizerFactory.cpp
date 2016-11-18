@@ -1,9 +1,9 @@
-#include "SpeechSynthesizerFactory.h"
-#include "ISpeechSynthesizer.h"
+#include "audio/SpeechSynthesizerFactory.h"
+#include "audio/ISpeechSynthesizer.h"
 #ifdef __linux__ 
-#include "SpeechSynthesizerTts.h"
+#include "audio/SpeechSynthesizerTts.h"
 #elif _WIN32
-#include "SpeechSynthesizerPs.h"
+#include "audio/SpeechSynthesizerPs.h"
 #endif
 
 namespace robo

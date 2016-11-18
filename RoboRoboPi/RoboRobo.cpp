@@ -5,8 +5,8 @@
 #include "gloox/src/message.h"
 
 #include "servo.h"
-#include "ISoundPlayer.h"
-#include "ISpeechSynthesizer.h"
+#include "audio/ISoundPlayer.h"
+#include "audio/ISpeechSynthesizer.h"
 
 #include <string>
 #include <memory>

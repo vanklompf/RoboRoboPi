@@ -1,6 +1,6 @@
 #ifndef SPEECH_SYNTHESIZER_TTS_H
 #define SPEECH_SYNTHESIZER_TTS_H
-#include <ISpeechSynthesizer.h>
+#include <audio/ISpeechSynthesizer.h>
 #include <string>
 #include <vector>
 #include "picotts/TtsEngine.h"

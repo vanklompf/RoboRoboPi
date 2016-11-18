@@ -74,7 +74,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)stubs;$(ProjectDir)commands;$(ProjectDir);$(ProjectDir)..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)stubs;$(ProjectDir);$(ProjectDir)..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
@@ -103,7 +103,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)stubs;$(ProjectDir)commands;$(ProjectDir);$(ProjectDir)..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)stubs;$(ProjectDir);$(ProjectDir)..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
@@ -132,7 +132,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AlsaSoundPlayer.cpp">
+    <ClCompile Include="audio\AlsaSoundPlayer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="audio\SoundPlayerFactory.cpp" />
+    <ClCompile Include="audio\SoundPlayer_linux.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="audio\SoundPlayer_windows.cpp" />
+    <ClCompile Include="audio\SpeechSynthesizerFactory.cpp" />
+    <ClCompile Include="audio\SpeechSynthesizerPs.cpp" />
+    <ClCompile Include="audio\SpeechSynthesizerTts.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -144,30 +156,27 @@
     <ClCompile Include="commands\UnknownCommand.cpp" />
     <ClCompile Include="ConnectionListener.cpp" />
     <ClCompile Include="Gpio.cpp" />
-    <ClCompile Include="ISoundPlayer.h" />
-    <ClCompile Include="ISpeechSynthesizer.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageHandler.cpp" />
     <ClCompile Include="RoboRoboFactory.cpp" />
     <ClCompile Include="servo.cpp" />
     <ClCompile Include="logger.cpp" />
-    <ClCompile Include="SoundPlayerFactory.cpp" />
-    <ClCompile Include="SoundPlayer_linux.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="SpeechSynthesizerFactory.cpp" />
-    <ClCompile Include="SpeechSynthesizerTts.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="stubs\SoundPlayer_windows.cpp" />
-    <ClCompile Include="stubs\SpeechSynthesizerPs.cpp" />
     <ClCompile Include="xmppComponent.cpp" />
     <ClCompile Include="RoboRobo.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AlsaSoundPlayer.h">
+    <ClInclude Include="audio\AlsaSoundPlayer.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="audio\ISoundPlayer.h" />
+    <ClInclude Include="audio\ISpeechSynthesizer.h" />
+    <ClInclude Include="audio\NullSoundPlayer.h" />
+    <ClInclude Include="audio\SoundPlayer.h" />
+    <ClInclude Include="audio\SoundPlayerFactory.h" />
+    <ClInclude Include="audio\SpeechSynthesizerFactory.h" />
+    <ClInclude Include="audio\SpeechSynthesizerPs.h" />
+    <ClInclude Include="audio\SpeechSynthesizerTts.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClInclude>
@@ -182,17 +191,8 @@
     <ClInclude Include="Gpio.h" />
     <ClInclude Include="logger.h" />
     <ClInclude Include="MessageHandler.h" />
-    <ClInclude Include="NullSoundPlayer.h" />
     <ClInclude Include="RoboRoboFactory.h" />
     <ClInclude Include="servo.h" />
-    <ClInclude Include="SoundPlayer.h" />
-    <ClInclude Include="SoundPlayerFactory.h" />
-    <ClInclude Include="SpeechSynthesizerFactory.h" />
-    <ClInclude Include="SpeechSynthesizerPs.h" />
-    <ClInclude Include="SpeechSynthesizerTts.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="stubs\wiringPi.h" />
     <ClInclude Include="xmppComponent.h" />
     <ClInclude Include="RoboRobo.h" />
@@ -203,7 +203,32 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="speak.ps1" />
+    <Content Include="audio\speak.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\apocalypse.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\base.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\burning.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\napalm.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\nuclear.wav">
+    </Content>
+    <Content Include="sounds\system.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\yes.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="sounds\apocalypse.wav" />
@@ -215,7 +240,7 @@
     <Media Include="sounds\yes.wav" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="CMakeLists.txt" />
+    <None Include="audio\speak.ps1" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

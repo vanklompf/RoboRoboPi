@@ -28,19 +28,27 @@
     <ClCompile Include="commands\PlaySoundCommand.cpp">
       <Filter>commands</Filter>
     </ClCompile>
-    <ClCompile Include="SoundPlayer_linux.cpp" />
-    <ClCompile Include="stubs\SoundPlayer_windows.cpp">
-      <Filter>stubs</Filter>
+    <ClCompile Include="audio\SoundPlayer_linux.cpp">
+      <Filter>audio</Filter>
     </ClCompile>
-    <ClCompile Include="ISpeechSynthesizer.h" />
-    <ClCompile Include="SpeechSynthesizerTts.cpp" />
-    <ClCompile Include="SpeechSynthesizerFactory.cpp" />
-    <ClCompile Include="stubs\SpeechSynthesizerPs.cpp">
-      <Filter>stubs</Filter>
+    <ClCompile Include="audio\SoundPlayer_windows.cpp">
+      <Filter>audio</Filter>
     </ClCompile>
-    <ClCompile Include="AlsaSoundPlayer.cpp" />
-    <ClCompile Include="ISoundPlayer.h" />
-    <ClCompile Include="SoundPlayerFactory.cpp" />
+    <ClCompile Include="audio\SoundPlayerFactory.cpp">
+      <Filter>audio</Filter>
+    </ClCompile>
+    <ClCompile Include="audio\SpeechSynthesizerFactory.cpp">
+      <Filter>audio</Filter>
+    </ClCompile>
+    <ClCompile Include="audio\SpeechSynthesizerPs.cpp">
+      <Filter>audio</Filter>
+    </ClCompile>
+    <ClCompile Include="audio\SpeechSynthesizerTts.cpp">
+      <Filter>audio</Filter>
+    </ClCompile>
+    <ClCompile Include="audio\AlsaSoundPlayer.cpp">
+      <Filter>audio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="logger.h" />
@@ -75,13 +83,33 @@
     <ClInclude Include="commands\PlaySoundCommand.h">
       <Filter>commands</Filter>
     </ClInclude>
-    <ClInclude Include="SoundPlayer.h" />
-    <ClInclude Include="SpeechSynthesizerTts.h" />
-    <ClInclude Include="SpeechSynthesizerFactory.h" />
-    <ClInclude Include="SpeechSynthesizerPs.h" />
-    <ClInclude Include="AlsaSoundPlayer.h" />
-    <ClInclude Include="SoundPlayerFactory.h" />
-    <ClInclude Include="NullSoundPlayer.h" />
+    <ClInclude Include="audio\AlsaSoundPlayer.h">
+      <Filter>audio</Filter>
+    </ClInclude>
+    <ClInclude Include="audio\ISoundPlayer.h">
+      <Filter>audio</Filter>
+    </ClInclude>
+    <ClInclude Include="audio\ISpeechSynthesizer.h">
+      <Filter>audio</Filter>
+    </ClInclude>
+    <ClInclude Include="audio\NullSoundPlayer.h">
+      <Filter>audio</Filter>
+    </ClInclude>
+    <ClInclude Include="audio\SoundPlayer.h">
+      <Filter>audio</Filter>
+    </ClInclude>
+    <ClInclude Include="audio\SoundPlayerFactory.h">
+      <Filter>audio</Filter>
+    </ClInclude>
+    <ClInclude Include="audio\SpeechSynthesizerFactory.h">
+      <Filter>audio</Filter>
+    </ClInclude>
+    <ClInclude Include="audio\SpeechSynthesizerPs.h">
+      <Filter>audio</Filter>
+    </ClInclude>
+    <ClInclude Include="audio\SpeechSynthesizerTts.h">
+      <Filter>audio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="sounds">
@@ -93,17 +121,18 @@
     <Filter Include="commands">
       <UniqueIdentifier>{23b6f2c5-8532-41e9-a05e-326240bf4dc3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="audio">
+      <UniqueIdentifier>{d1898a38-cd49-4ce8-be59-fc2c4c9855f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="speak.ps1">
-      <Filter>stubs</Filter>
-    </None>
+    <Text Include="CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="sounds\apocalypse.wav">
       <Filter>sounds</Filter>
     </Media>
-    <Media Include="Sounds\base.wav">
+    <Media Include="sounds\base.wav">
       <Filter>sounds</Filter>
     </Media>
     <Media Include="sounds\burning.wav">
@@ -123,6 +152,8 @@
     </Media>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="CMakeLists.txt" />
+    <None Include="audio\speak.ps1">
+      <Filter>audio</Filter>
+    </None>
   </ItemGroup>
 </Project>

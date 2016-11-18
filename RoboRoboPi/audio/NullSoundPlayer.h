@@ -1,6 +1,6 @@
 #ifndef NULL_SOUND_PLAYER_H
 #define NULL_SOUND_PLAYER_H
-#include "ISoundPlayer.h"
+#include "audio/ISoundPlayer.h"
 #include <stdint.h>
 #include <vector>
 

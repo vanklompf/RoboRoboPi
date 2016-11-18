@@ -1,6 +1,6 @@
 #include "commands/TellCommand.h"
 #include "logger.h"
-#include "ISpeechSynthesizer.h"
+#include "audio/ISpeechSynthesizer.h"
 #include <string>
 
 namespace robo

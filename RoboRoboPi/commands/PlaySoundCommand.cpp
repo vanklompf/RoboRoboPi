@@ -1,6 +1,6 @@
 #include "commands/PlaySoundCommand.h"
 #include "logger.h"
-#include "SoundPlayer.h"
+#include "audio/SoundPlayer.h"
 #include <string>
 #include <sstream>
 #include <experimental/filesystem>

@@ -1,9 +1,9 @@
-#include "SoundPlayerFactory.h"
-#include "ISoundPlayer.h"
+#include "audio/SoundPlayerFactory.h"
+#include "audio/ISoundPlayer.h"
 #ifdef __linux__ 
-#include "AlsaSoundPlayer.h"
+#include "audio/AlsaSoundPlayer.h"
 #elif _WIN32
-#include "NullSoundPlayer.h"
+#include "audio/NullSoundPlayer.h"
 #endif
 
 namespace robo

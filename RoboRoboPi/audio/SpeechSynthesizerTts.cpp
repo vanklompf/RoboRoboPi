@@ -1,7 +1,7 @@
-#include "SpeechSynthesizerTts.h"
+#include "audio/SpeechSynthesizerTts.h"
 #include "logger.h"
 #include "picotts/TtsEngine.h"
-#include "ISoundPlayer.h"
+#include "audio/ISoundPlayer.h"
 
 #include <vector>
 #include <chrono>

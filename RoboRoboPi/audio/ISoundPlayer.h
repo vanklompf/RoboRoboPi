@@ -1,7 +1,6 @@
 #ifndef ISOUND_PLAYER_H
 #define ISOUND_PLAYER_H
 #include <stdint.h>
-#include <cstddef>
 #include <vector>
 
 namespace robo

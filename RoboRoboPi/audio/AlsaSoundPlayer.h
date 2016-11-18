@@ -1,6 +1,6 @@
 #ifndef ALSA_SOUND_PLAYER_H
 #define ALSA_SOUND_PLAYER_H
-#include "ISoundPlayer.h"
+#include "audio/ISoundPlayer.h"
 #include <alsa/asoundlib.h>
 #include <stdint.h>
 #include <vector>
