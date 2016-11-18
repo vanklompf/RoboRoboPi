@@ -20,7 +20,6 @@ namespace robo
     SpeechSynthesizerTts(const ISoundPlayer& soundPlayer);
     void Init();
     bool Say(std::string phrase);
-    ~SpeechSynthesizerTts();
   private:
     static android::tts_callback_status SynthDoneAlsa(void*& userdata, uint32_t sample_rate,
       android::tts_audio_format audio_format, int channels, int8_t*& data, size_t& size, android::tts_synth_status status);

@@ -3,6 +3,7 @@
 #include "ISoundPlayer.h"
 #include <alsa/asoundlib.h>
 #include <stdint.h>
+#include <vector>
 
 namespace robo
 {
@@ -11,7 +12,7 @@ namespace robo
   public:
     ~AlsaSoundPlayer();
     void Init();
-    void PlayPcm(const int8_t* buf, size_t size) const;
+    void PlayPcm(const std::vector<int8_t>& buf) const;
   private:
     snd_pcm_uframes_t m_frames;
     snd_pcm_t* m_pcmHandle;

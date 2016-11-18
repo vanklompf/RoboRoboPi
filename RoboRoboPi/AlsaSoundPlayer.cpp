@@ -1,7 +1,8 @@
 #include "AlsaSoundPlayer.h"
-#include <algorithm>
-#include <alsa/asoundlib.h>
 #include "logger.h"
+#include <alsa/asoundlib.h>
+#include <algorithm>
+#include <vector>
 
 namespace robo
 {
@@ -64,14 +65,17 @@ namespace robo
     }
   }
 
-  void AlsaSoundPlayer::PlayPcm(const int8_t* buf, size_t size) const
+  void AlsaSoundPlayer::PlayPcm(const std::vector<int8_t>& buf) const
   {
-    while (size > 0)
-    {
-      snd_pcm_uframes_t remaining_frames = std::min(size/2, (size_t)m_frames);
-      printf("data_remaining: %d. remaining_frames: %ld\n", size, remaining_frames);
+    auto pos = buf.begin();
 
-      auto pcm = snd_pcm_writei(m_pcmHandle, buf, remaining_frames);
+    while (pos != buf.end())
+    {
+      auto remaining_data = std::distance(pos, buf.end());
+      snd_pcm_uframes_t remaining_frames = (uint32_t)(remaining_data / 2) > m_frames ? m_frames : remaining_data / 2;
+      //printf("data_remaining: %d. remaining_frames: %ld\n", remaining_data, remaining_frames);
+
+      auto pcm = snd_pcm_writei(m_pcmHandle, &(*pos), remaining_frames);
       if (pcm == -EPIPE)
       {
         snd_pcm_prepare(m_pcmHandle);
@@ -82,8 +86,7 @@ namespace robo
         break;
       }
 
-      size -= remaining_frames * 2;
-      buf += remaining_frames * 2;
+      pos += remaining_frames * 2;
     }
   }
 }

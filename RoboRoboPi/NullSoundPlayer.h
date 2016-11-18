@@ -2,13 +2,14 @@
 #define NULL_SOUND_PLAYER_H
 #include "ISoundPlayer.h"
 #include <stdint.h>
+#include <vector>
 
 namespace robo
 {
   class NullSoundPlayer : public ISoundPlayer
   {
     void Init() {};
-    void PlayPcm(const int8_t*, size_t) const {};
+    void PlayPcm(const std::vector<int8_t>&) const {};
   };
 }
 

@@ -2,6 +2,7 @@
 #define ISOUND_PLAYER_H
 #include <stdint.h>
 #include <cstddef>
+#include <vector>
 
 namespace robo
 {
@@ -9,7 +10,7 @@ namespace robo
   {
   public:
     virtual void Init() = 0;
-    virtual void PlayPcm(const int8_t* buf, size_t size) const = 0;
+    virtual void PlayPcm(const std::vector<int8_t>& buf) const = 0;
   };
 }
 
