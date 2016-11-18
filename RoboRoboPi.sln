@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.25807.0
+VisualStudioVersion = 15.0.25914.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AndroidRoboRobo", "AndroidRoboRobo", "{DF284108-0756-4FF9-96A1-96210B485D73}"
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RoboRoboPi", "RoboRoboPi\RoboRoboPi.vcxproj", "{8E64B9C2-D28D-4E52-B111-22BF6E6374F8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gloox-1.0", "gloox\gloox.vcxproj", "{36E32BC3-0645-4C90-8BF5-6495ACB7CF5F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidRoboRobo", "AndroidRoboRobo\AndroidRoboRobo.csproj", "{9822E1DB-DD03-417B-AD01-F457FBF5C0C2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AndroidRoboRobo", "AndroidRoboRobo", "{DF284108-0756-4FF9-96A1-96210B485D73}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebRoboRobo", "WebRoboRobo2\WebRoboRobo.xproj", "{38BF8D44-B2F0-4C84-98C4-F53E00966A06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebRoboRobo", "WebRoboRobo2\WebRoboRobo.xproj", "{38BF8D44-B2F0-4C84-98C4-F53E00966A06}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboXmppHelper", "RoboXmppHelper\RoboXmppHelper.csproj", "{2BD48D1D-6285-4F51-BA61-942B985079E7}"
 EndProject
