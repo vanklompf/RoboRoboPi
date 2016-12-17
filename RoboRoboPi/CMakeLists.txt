@@ -34,13 +34,13 @@ set(SOURCE_FILES
   ${AUDIO_SOURCE_FILES}
   ${COMMANDS_SOURCE_FILES}
   ConnectionListener.cpp
-  Gpio.cpp
   logger.cpp
   main.cpp
   MessageHandler.cpp
   RoboRoboFactory.cpp
   RoboRobo.cpp
-  servo.cpp
+  GpioPi.cpp
+  GpioFactory.cpp
   xmppComponent.cpp
 )
 
@@ -51,11 +51,11 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 file(COPY sounds DESTINATION .)
 add_executable(RoboRoboPi ${SOURCE_FILES})
 target_link_libraries(RoboRoboPi /usr/local/lib/libpigpio.so)
-target_link_libraries(RoboRoboPi -lwiringPi)
 target_link_libraries(RoboRoboPi -lpthread)
 target_link_libraries(RoboRoboPi -lgloox)
 target_link_libraries(RoboRoboPi ${CMAKE_CURRENT_SOURCE_DIR}/../picotts/libtts.a)
 target_link_libraries(RoboRoboPi -lasound)
+target_link_libraries(RoboRoboPi -lsndfile)
 target_link_libraries(RoboRoboPi -lexpat)
 target_link_libraries(RoboRoboPi -lstdc++fs)
 

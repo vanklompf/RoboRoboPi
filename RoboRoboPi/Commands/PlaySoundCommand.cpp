@@ -1,6 +1,6 @@
 #include "commands/PlaySoundCommand.h"
 #include "logger.h"
-#include "audio/SoundPlayer.h"
+#include "audio/ISoundPlayer.h"
 #include <string>
 #include <sstream>
 #include <experimental/filesystem>
@@ -16,11 +16,14 @@ namespace robo
     return std::equal(ending.rbegin(), ending.rend(), value.rbegin());
   }
 
+  PlaySoundCommand::PlaySoundCommand(const ISoundPlayer& soundPlayer) : m_soundPlayer(soundPlayer)
+  {
+  }
+
   const std::string PlaySoundCommand::operator()(const std::string& command)
   {
-    LogDebug("Executing PlaySoundCommand(\"%s\")", command.c_str());
     std::string filename = SOUND_PATH + "/" + command + ".wav";
-    return PlaySoundFromFile(filename) ? "OK" : "Error playing sound";
+    return m_soundPlayer.PlayWav(filename) ? "OK" : "Error playing sound";
   }
 
   const std::string PlaySoundCommand::GetHelp() const

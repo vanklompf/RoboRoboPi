@@ -16,7 +16,6 @@ namespace gloox
 
 namespace robo 
 {
-  class Servo;
   class ICommand;
 
   typedef std::map<char, std::unique_ptr<ICommand>> CommandsMap;

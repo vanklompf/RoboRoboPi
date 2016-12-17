@@ -3,13 +3,15 @@
 #include "audio/ISoundPlayer.h"
 #include <stdint.h>
 #include <vector>
+#include <string>
 
 namespace robo
 {
-  class NullSoundPlayer : public ISoundPlayer
+  class WindowsSoundPlayer : public ISoundPlayer
   {
     void Init() {};
     void PlayPcm(const std::vector<int8_t>&) const {};
+    bool PlayWav(const std::string&) const;
   };
 }
 

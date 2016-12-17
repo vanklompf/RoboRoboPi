@@ -6,17 +6,17 @@
 
 namespace robo
 {
-  class Servo;
+  class IGpio;
 
   class ServoCommand final : public ICommand
   {
   public:
-    ServoCommand(Servo& servo);
+    ServoCommand(IGpio& gpio);
     const std::string operator()(const std::string& command);
     const std::string GetHelp() const;
 
   private:
-    Servo& m_servo;
+    IGpio& m_gpio;
   };
 }
 

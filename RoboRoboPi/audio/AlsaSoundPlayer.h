@@ -13,9 +13,11 @@ namespace robo
     ~AlsaSoundPlayer();
     void Init();
     void PlayPcm(const std::vector<int8_t>& buf) const;
+    bool PlayWav(const std::string& file) const;
   private:
     snd_pcm_uframes_t m_frames;
     snd_pcm_t* m_pcmHandle;
+    snd_pcm_hw_params_t* m_hwParams;
   };
 }
 

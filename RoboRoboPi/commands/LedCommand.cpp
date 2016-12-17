@@ -6,7 +6,7 @@
 
 namespace robo
 {
-  LedCommand::LedCommand(Gpio & gpio) : m_gpio(gpio){}
+  LedCommand::LedCommand(IGpio& gpio) : m_gpio(gpio){}
 
   const std::string LedCommand::operator()(const std::string& command)
   {

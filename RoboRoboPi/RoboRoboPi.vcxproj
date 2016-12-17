@@ -141,13 +141,13 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="audio\SoundPlayer_windows.cpp" />
     <ClCompile Include="audio\SpeechSynthesizerFactory.cpp" />
     <ClCompile Include="audio\SpeechSynthesizerPs.cpp" />
     <ClCompile Include="audio\SpeechSynthesizerTts.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="audio\WindowsSoundPlayer.cpp" />
     <ClCompile Include="commands\HelpCommand.cpp" />
     <ClCompile Include="commands\LedCommand.cpp" />
     <ClCompile Include="commands\PlaySoundCommand.cpp" />
@@ -155,11 +155,19 @@
     <ClCompile Include="commands\TellCommand.cpp" />
     <ClCompile Include="commands\UnknownCommand.cpp" />
     <ClCompile Include="ConnectionListener.cpp" />
-    <ClCompile Include="Gpio.cpp" />
+    <ClCompile Include="GpioFactory.cpp" />
+    <ClCompile Include="GpioPi.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GpioWin.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageHandler.cpp" />
     <ClCompile Include="RoboRoboFactory.cpp" />
-    <ClCompile Include="servo.cpp" />
+    <ClCompile Include="servo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="xmppComponent.cpp" />
     <ClCompile Include="RoboRobo.cpp" />
@@ -171,7 +179,7 @@
     </ClInclude>
     <ClInclude Include="audio\ISoundPlayer.h" />
     <ClInclude Include="audio\ISpeechSynthesizer.h" />
-    <ClInclude Include="audio\NullSoundPlayer.h" />
+    <ClInclude Include="audio\WindowsSoundPlayer.h" />
     <ClInclude Include="audio\SoundPlayer.h" />
     <ClInclude Include="audio\SoundPlayerFactory.h" />
     <ClInclude Include="audio\SpeechSynthesizerFactory.h" />
@@ -188,12 +196,20 @@
     <ClInclude Include="commands\TellCommand.h" />
     <ClInclude Include="commands\UnknownCommand.h" />
     <ClInclude Include="ConnectionListener.h" />
-    <ClInclude Include="Gpio.h" />
+    <ClInclude Include="GpioFactory.h" />
+    <ClInclude Include="GpioPi.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="GpioWin.h" />
+    <ClInclude Include="IGpio.h" />
     <ClInclude Include="logger.h" />
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="RoboRoboFactory.h" />
-    <ClInclude Include="servo.h" />
-    <ClInclude Include="stubs\wiringPi.h" />
+    <ClInclude Include="servo.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="xmppComponent.h" />
     <ClInclude Include="RoboRobo.h" />
   </ItemGroup>

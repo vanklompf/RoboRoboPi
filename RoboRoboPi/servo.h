@@ -4,13 +4,6 @@
 
 namespace robo
 {
-  enum servo_status_t
-  {
-    SERVO_OK,
-    SERVO_OUT_OF_RANGE,
-    SERVO_ERROR
-  };
-
   class Servo
   {
   public:

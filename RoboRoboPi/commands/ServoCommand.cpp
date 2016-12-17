@@ -1,18 +1,18 @@
 #include "commands/ServoCommand.h"
-#include "servo.h"
 #include "logger.h"
+#include "IGpio.h"
 
 #include<string>
 
 namespace robo
 {
-  ServoCommand::ServoCommand(Servo& servo) : m_servo(servo){}
+  ServoCommand::ServoCommand(IGpio& gpio) : m_gpio(gpio){}
 
   const std::string ServoCommand::operator()(const std::string& command)
   {
     LogDebug("Executing ServoCommand(\"%s\")", command.c_str());
 
-    auto status = servo_status_t::SERVO_ERROR;
+    /*auto status = servo_status_t::SERVO_ERROR;
     char param = command.front();
 
     if ((param <= '9') && (param >= '0'))
@@ -36,6 +36,8 @@ namespace robo
     }
 
     return m_servo.getStatusText(status);
+    */
+    return "OK";
   }
   const std::string ServoCommand::GetHelp() const
   {

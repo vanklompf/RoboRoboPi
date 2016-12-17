@@ -1,8 +1,6 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
-#include <wiringPi.h>
-//#include <pigpio.h>
 
 #include "RoboRobo.h"
 #include "RoboRoboFactory.h"
@@ -15,6 +13,7 @@ using namespace robo;
 
 static const char* logPath = "log.txt";
 
+/*
 void blink()
 {
     pinMode(16, OUTPUT);
@@ -25,7 +24,7 @@ void blink()
         digitalWrite (16,  LOW);
         std::this_thread::sleep_for(500ms);
     }
-}
+}*/
 
 void component()
 {
@@ -47,7 +46,7 @@ int main(void)
     //wiringPiSetup();
     //gpioInitialise();
 
-    std::thread t1(blink);
+    //std::thread t1(blink);
     //std::thread t2(component);
 
     auto robo = RoboRoboFactory::Create();

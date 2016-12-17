@@ -21,7 +21,6 @@
     <ClCompile Include="commands\LedCommand.cpp">
       <Filter>commands</Filter>
     </ClCompile>
-    <ClCompile Include="Gpio.cpp" />
     <ClCompile Include="commands\TellCommand.cpp">
       <Filter>commands</Filter>
     </ClCompile>
@@ -29,9 +28,6 @@
       <Filter>commands</Filter>
     </ClCompile>
     <ClCompile Include="audio\SoundPlayer_linux.cpp">
-      <Filter>audio</Filter>
-    </ClCompile>
-    <ClCompile Include="audio\SoundPlayer_windows.cpp">
       <Filter>audio</Filter>
     </ClCompile>
     <ClCompile Include="audio\SoundPlayerFactory.cpp">
@@ -49,13 +45,16 @@
     <ClCompile Include="audio\AlsaSoundPlayer.cpp">
       <Filter>audio</Filter>
     </ClCompile>
+    <ClCompile Include="audio\WindowsSoundPlayer.cpp">
+      <Filter>audio</Filter>
+    </ClCompile>
+    <ClCompile Include="GpioPi.cpp" />
+    <ClCompile Include="GpioFactory.cpp" />
+    <ClCompile Include="GpioWin.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="logger.h" />
     <ClInclude Include="xmppComponent.h" />
-    <ClInclude Include="stubs\wiringPi.h">
-      <Filter>stubs</Filter>
-    </ClInclude>
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="RoboRoboFactory.h" />
     <ClInclude Include="RoboRobo.h" />
@@ -76,7 +75,6 @@
     <ClInclude Include="commands\LedCommand.h">
       <Filter>commands</Filter>
     </ClInclude>
-    <ClInclude Include="Gpio.h" />
     <ClInclude Include="commands\TellCommand.h">
       <Filter>commands</Filter>
     </ClInclude>
@@ -90,9 +88,6 @@
       <Filter>audio</Filter>
     </ClInclude>
     <ClInclude Include="audio\ISpeechSynthesizer.h">
-      <Filter>audio</Filter>
-    </ClInclude>
-    <ClInclude Include="audio\NullSoundPlayer.h">
       <Filter>audio</Filter>
     </ClInclude>
     <ClInclude Include="audio\SoundPlayer.h">
@@ -110,13 +105,17 @@
     <ClInclude Include="audio\SpeechSynthesizerTts.h">
       <Filter>audio</Filter>
     </ClInclude>
+    <ClInclude Include="audio\WindowsSoundPlayer.h">
+      <Filter>audio</Filter>
+    </ClInclude>
+    <ClInclude Include="GpioPi.h" />
+    <ClInclude Include="IGpio.h" />
+    <ClInclude Include="GpioFactory.h" />
+    <ClInclude Include="GpioWin.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="sounds">
       <UniqueIdentifier>{40ea731a-14c3-4f37-8712-f806c8a14678}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="stubs">
-      <UniqueIdentifier>{96edac7f-c1b2-4c04-b6f6-0fee7679578f}</UniqueIdentifier>
     </Filter>
     <Filter Include="commands">
       <UniqueIdentifier>{23b6f2c5-8532-41e9-a05e-326240bf4dc3}</UniqueIdentifier>
