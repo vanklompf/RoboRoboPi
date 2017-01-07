@@ -9,21 +9,28 @@ namespace robo
 {
   static const std::map<led_t, unsigned int> LedMap
   {
-    { led_t::ORANGE_LED, 8 },
-    { led_t::YELLOW_LED, 23 }
+    { led_t::YELLOW_LED, 25 },
+    { led_t::ORANGE_LED, 7 }
   };
 
   void GpioPi::Init() const
   {
+    LogDebug("GpioPi::Init()");
     if (gpioInitialise() < 0)
     {
-      LogDebug("Gpio init failed");
+      LogDebug("GpioPi::Init() failed");
     }
 
     for (auto pin : LedMap)
     {
-      gpioSetMode(pin.second, PI_OUTPUT);
+      SetAsOutput(pin.second);
     }
+  }
+
+  GpioPi::~GpioPi()
+  {
+    LogDebug("Terminating GPIO()");
+    gpioTerminate();
   }
 
   void GpioPi::LedOn(led_t led) const
@@ -31,7 +38,7 @@ namespace robo
     auto ledPin = LedMap.find(led);
     if (ledPin != LedMap.end())
     {
-      gpioWrite(ledPin->second, 1);
+      SetPinHigh(ledPin->second);
     }
   }
 
@@ -40,27 +47,59 @@ namespace robo
     auto ledPin = LedMap.find(led);
     if (ledPin != LedMap.end())
     {
-      gpioWrite(ledPin->second, 1);
+      SetPinLow(ledPin->second);
     }
   }
 
-  servo_status_t GpioPi::SetAngle(int16_t angle) const
+  void GpioPi::SetPinHigh(unsigned int pin) const
   {
-    return servo_status_t::SERVO_OK;
+    LogDebug("Setting pin: %d HIGH", pin);
+    gpioWrite(pin, 1);
   }
 
-  servo_status_t GpioPi::StepLeft() const
+  void GpioPi::SetPinLow(unsigned int pin) const
   {
-    return servo_status_t::SERVO_OK;
+    LogDebug("Setting pin: %d LOW", pin);
+    gpioWrite(pin, 0);
   }
 
-  servo_status_t GpioPi::StepRight() const
+  void GpioPi::SetLed(led_t led, led_mode_t mode) const
   {
-    return servo_status_t::SERVO_OK;
   }
 
-  const char* GpioPi::GetStatusText(servo_status_t status) const
+  void GpioPi::SetAsOutput(uint8_t pin) const
   {
-    return "some error";
+    LogDebug("PIN: %d set as OUTPUT", pin);
+    gpioSetMode(pin, PI_OUTPUT);
+  }
+
+  void GpioPi::SetAsInput(uint8_t pin) const
+  {
+    LogDebug("PIN: %d set as INPUT", pin);
+    gpioSetMode(pin, PI_INPUT);
+  }
+
+  void GpioPi::SetServo(uint8_t pin, uint32_t pos) const
+  {
+    LogDebug("PIN: %d set to pos: %d", pin, pos);
+    gpioServo(pin, pos);
+  }
+
+  void GpioPi::SetPwmFrequency(uint8_t pin, uint32_t freq)  const
+  {
+    LogDebug("PIN: %d set PWM freq: %d", pin, freq);
+    gpioSetPWMfrequency(pin, freq);
+  }
+
+  void GpioPi::SetPwmRange(uint8_t pin, uint32_t range)  const
+  {
+    LogDebug("PIN: %d set PWM range: %d", pin, range);
+    gpioSetPWMrange(pin, range);
+  }
+
+  void GpioPi::SetPwmDutyCycle(uint8_t pin, uint32_t dutycycle)  const
+  {
+    LogDebug("PIN: %d set PWM dutycycle: %d", pin, dutycycle);
+    gpioPWM(pin, dutycycle);
   }
 }

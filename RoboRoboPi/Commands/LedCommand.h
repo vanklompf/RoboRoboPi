@@ -3,11 +3,11 @@
 
 #include "commands/ICommand.h"
 #include <string>
+#include <map>
+#include "IGpio.h"
 
 namespace robo
 {
-  class IGpio;
-
   class LedCommand final : public ICommand
   {
   public:
@@ -17,6 +17,7 @@ namespace robo
 
   private:
     IGpio& m_gpio;
+    led_t GetColor(char code);
   };
 }
 

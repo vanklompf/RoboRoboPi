@@ -14,6 +14,7 @@ namespace gloox
 namespace robo
 {
   class IGpio;
+  class Servo;
   class ISpeechSynthesizer;
   class ICommand;
   class ISoundPlayer;
@@ -21,12 +22,15 @@ namespace robo
   class RoboRobo final
   {
   public:
-    RoboRobo(std::unique_ptr<IGpio> gpio, std::unique_ptr<ISoundPlayer> pcmPlayer, std::unique_ptr<ISpeechSynthesizer> synthesizer, std::unique_ptr<gloox::Client> xmppClient);
+    RoboRobo(std::unique_ptr<IGpio> gpio, std::unique_ptr<Servo> servo, std::unique_ptr<ISoundPlayer> pcmPlayer, std::unique_ptr<ISpeechSynthesizer> synthesizer, std::unique_ptr<gloox::Client> xmppClient);
     ~RoboRobo();
     void Init();
 
   private:
+    void Blink();
+
     std::unique_ptr<IGpio> m_gpio;
+    std::unique_ptr<Servo> m_servo;
     std::unique_ptr<ISoundPlayer> m_soundPlayer;
     std::unique_ptr<ISpeechSynthesizer> m_synthesizer;
     std::unique_ptr<gloox::Client> m_client;

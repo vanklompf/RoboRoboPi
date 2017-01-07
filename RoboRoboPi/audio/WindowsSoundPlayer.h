@@ -9,7 +9,7 @@ namespace robo
 {
   class WindowsSoundPlayer : public ISoundPlayer
   {
-    void Init() {};
+    void Init();
     void PlayPcm(const std::vector<int8_t>&) const {};
     bool PlayWav(const std::string&) const;
   };

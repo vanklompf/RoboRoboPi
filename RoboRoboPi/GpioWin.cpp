@@ -1,40 +1,42 @@
 #include "GpioWin.h"
 
 #include "logger.h"
-#include <map>
 #include <cstdint>
 
 namespace robo
 {
   void GpioWin::Init() const
   {
+    LogDebug("GpioWin::Init()");
   }
 
-  void GpioWin::LedOn(led_t led) const
+  void GpioWin::SetAsOutput(uint8_t pin) const
   {
+    LogDebug("PIN: %d set as OUTPUT", pin);
   }
 
-  void GpioWin::LedOff(led_t led) const
+  void GpioWin::SetAsInput(uint8_t pin) const
   {
+    LogDebug("PIN: %d set as INPUT", pin);
   }
 
-  servo_status_t GpioWin::SetAngle(int16_t angle) const
+  void GpioWin::SetServo(uint8_t pin, uint32_t pos) const
   {
-    return servo_status_t::SERVO_OK;
+    LogDebug("PIN: %d set to pos: %d", pin, pos);
   }
 
-  servo_status_t GpioWin::StepLeft() const
+  void GpioWin::SetPwmFrequency(uint8_t pin, uint32_t freq)  const
   {
-    return servo_status_t::SERVO_OK;
+    LogDebug("PIN: %d set PWM freq: %d", pin, freq);
   }
 
-  servo_status_t GpioWin::StepRight() const
+  void GpioWin::SetPwmRange(uint8_t pin, uint32_t range)  const
   {
-    return servo_status_t::SERVO_OK;
+    LogDebug("PIN: %d set PWM range: %d", pin, range);
   }
 
-  const char* GpioWin::GetStatusText(servo_status_t status) const
+  void GpioWin::SetPwmDutyCycle(uint8_t pin, uint32_t dutycycle)  const
   {
-    return "some error";
+    LogDebug("PIN: %d set PWM dutycycle: %d", pin, dutycycle);
   }
 }

@@ -7,7 +7,6 @@
     <ClCompile Include="MessageHandler.cpp" />
     <ClCompile Include="RoboRoboFactory.cpp" />
     <ClCompile Include="RoboRobo.cpp" />
-    <ClCompile Include="servo.cpp" />
     <ClCompile Include="ConnectionListener.cpp" />
     <ClCompile Include="commands\ServoCommand.cpp">
       <Filter>commands</Filter>
@@ -51,6 +50,8 @@
     <ClCompile Include="GpioPi.cpp" />
     <ClCompile Include="GpioFactory.cpp" />
     <ClCompile Include="GpioWin.cpp" />
+    <ClCompile Include="servo_old.cpp" />
+    <ClCompile Include="Servo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="logger.h" />
@@ -58,7 +59,6 @@
     <ClInclude Include="MessageHandler.h" />
     <ClInclude Include="RoboRoboFactory.h" />
     <ClInclude Include="RoboRobo.h" />
-    <ClInclude Include="servo.h" />
     <ClInclude Include="ConnectionListener.h" />
     <ClInclude Include="commands\ICommand.h">
       <Filter>commands</Filter>
@@ -112,6 +112,8 @@
     <ClInclude Include="IGpio.h" />
     <ClInclude Include="GpioFactory.h" />
     <ClInclude Include="GpioWin.h" />
+    <ClInclude Include="servo_old.h" />
+    <ClInclude Include="Servo.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="sounds">

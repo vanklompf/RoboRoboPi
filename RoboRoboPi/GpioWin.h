@@ -9,13 +9,16 @@ namespace robo
   {
   public:
     void Init() const;
-    void LedOn(led_t pin) const;
-    void LedOff(led_t pin) const;
+    void LedOn(led_t pin) const {};
+    void LedOff(led_t pin) const {};
+    void SetLed(led_t led, led_mode_t mode) const {};
 
-    servo_status_t SetAngle(int16_t angle) const;
-    servo_status_t StepLeft() const;
-    servo_status_t StepRight() const;
-    const char* GetStatusText(servo_status_t status) const;
+    void SetAsOutput(uint8_t pin) const;
+    void SetAsInput(uint8_t pin) const;
+    void SetServo(uint8_t pin, uint32_t pos) const;
+    void SetPwmFrequency(uint8_t pin, uint32_t freq)  const;
+    void SetPwmRange(uint8_t pin, uint32_t range)  const;
+    void SetPwmDutyCycle(uint8_t pin, uint32_t dutycycle)  const;
   };
 }
 

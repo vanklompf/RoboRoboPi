@@ -15,7 +15,7 @@ namespace robo
 
   void AlsaSoundPlayer::Init()
   {
-    LogDebug("Initializing Alsa...");
+    LogDebug("AlsaSoundPlayer::Init()");
     unsigned int pcm;
     unsigned int rate = 16000;
 
@@ -98,12 +98,13 @@ namespace robo
     LogDebug("Sample rate: %d", sfinfo.samplerate);
     LogDebug("Sections: %d", sfinfo.sections);
     LogDebug("Format: %d", sfinfo.format);
+    int dir = 0;
 
     unsigned int pcm;
-    if ((pcm = snd_pcm_hw_params_set_rate_near(m_pcmHandle, m_hwParams, &(unsigned int)sfinfo.samplerate, 0)) < 0)
+    if ((pcm = snd_pcm_hw_params_set_rate_near(m_pcmHandle, m_hwParams, (unsigned int*)&sfinfo.samplerate, &dir)) < 0)
     {
       LogDebug("ERROR: Can't set rate. %s\n", snd_strerror(pcm));
-      return;
+      return false;
     }
 
     auto buf = new int16_t[m_frames * sfinfo.channels];
